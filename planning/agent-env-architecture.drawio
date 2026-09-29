@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-09-29T00:00:00.000Z" agent="ZCode" version="24.0.0">
+  <diagram id="agent-env-arch" name="Agent环境架构">
+    <mxGraphModel dx="1420" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1440" pageHeight="1360" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 标题 -->
+        <mxCell id="title" value="Agent环境 — 五层架构与进化闭环（v3 · 2026-09-29）" style="text;html=1;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#1F2937;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="640" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 专家 -->
+        <mxCell id="expert" value="&lt;b&gt;专家（你）&lt;/b&gt;&lt;br&gt;判断 · 品味 · 反馈 · 决策" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="560" y="70" width="380" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- L3 协同层 -->
+        <mxCell id="l3" value="&lt;b&gt;L3 协同层 — 专家 × Agent 协同干活的地方（harness）&lt;/b&gt;&lt;br&gt;&lt;br&gt;✅ ZCode / Codex 会话 · 66+ 通用 skills · Agent-sync · memory&lt;br&gt;✅ wind / ifind 等 MCP 工具 · Lark 知识库（人读面）&lt;br&gt;🟡 AI-cold-start packs — soft skills 商品化（base ¥10 / ai-pm ¥19.9）&lt;br&gt;🟡 asp 安装器 — 环境部署与更新分发器（已实测 7 个 agent）" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=16;spacingTop=8;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=13;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="160" y="220" width="1180" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- L4 进化层 -->
+        <mxCell id="l4" value="&lt;b&gt;L4 进化层 — 反馈闭环 🔴GAP&lt;/b&gt;&lt;br&gt;&lt;br&gt;· 会话反馈 → 结构化回流&lt;br&gt;· 周审机制（git PR 人审）&lt;br&gt;· gold 样本回流 → 重校准传感器&lt;br&gt;· 技能迭代 → registry 发版&lt;br&gt;&lt;br&gt;🟡 半成品：asp update 已解决&lt;br&gt;　「进化结果触达 7 个 agent 端」" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=16;spacingTop=8;fillColor=#F8CECC;strokeColor=#B85450;fontSize=13;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="160" y="520" width="430" height="250" as="geometry" />
+        </mxCell>
+
+        <!-- L2 知识底座 -->
+        <mxCell id="l2" value="&lt;b&gt;L2 知识底座 — 核心资产 ★当前第一优先 🔴GAP&lt;/b&gt;&lt;br&gt;&lt;br&gt;实体档案 · 事实时间线 · 领域 SOP&lt;br&gt;案例库 · 术语表 · 立场与偏好&lt;br&gt;&lt;br&gt;载体已定：git + markdown 为单一事实源&lt;br&gt;Lark 作发布面（schema 待设计）" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=16;spacingTop=8;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=13;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="900" y="520" width="440" height="250" as="geometry" />
+        </mxCell>
+
+        <!-- L1 沉淀层 -->
+        <mxCell id="l1" value="&lt;b&gt;L1 沉淀层 — 流→库管线 🔴GAP&lt;/b&gt;&lt;br&gt;&lt;br&gt;AIHOT 精选 → 结构化抽取（复用 structure.md）&lt;br&gt;个人文档 / 工作产物 → 同一管线&lt;br&gt;周期 compaction（复用周 / 月报范式）" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=16;spacingTop=8;fillColor=#F8CECC;strokeColor=#B85450;fontSize=13;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="900" y="830" width="440" height="190" as="geometry" />
+        </mxCell>
+
+        <!-- L0 感知层 -->
+        <mxCell id="l0" value="&lt;b&gt;L0 感知层 — 传感器矩阵&lt;/b&gt;&lt;br&gt;&lt;br&gt;🟡 AIHOT fork — 领域情报传感器（规划完成，未跑通）&lt;br&gt;✅ asp collector — 技能生态周更抓源&lt;br&gt;✅ 个人输入 — 文档 / 对话 / Lark / memory" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=16;spacingTop=8;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=13;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1080" width="440" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- 图例 -->
+        <mxCell id="legend" value="&lt;b&gt;图例&lt;/b&gt;&lt;br&gt;✅ 就绪可复用　🟡 部分就绪　🔴 GAP 待建&lt;br&gt;优先级：L2 &amp;gt; L4 / L1 &amp;gt; L0&lt;br&gt;① — ⑤ = 进化闭环回路&lt;br&gt;（红边 = 进化闭环，蓝边 = 数据流）" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=8;fillColor=#FFFFFF;strokeColor=#999999;dashed=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="160" y="830" width="430" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- 咬合点 -->
+        <mxCell id="mesh" value="&lt;b&gt;两大项目咬合点&lt;/b&gt;&lt;br&gt;asp 解决「进化结果如何分发到 7 个 agent 端」；&lt;br&gt;AIHOT 解决「领域信息如何流入」。&lt;br&gt;→ Domain Pack / Soft Skills Pack 未来&lt;br&gt;　 经同一条 asp 渠道分发。" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=8;fillColor=#FFF2CC;strokeColor=#D6B656;dashed=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="160" y="990" width="430" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- 边：专家 <-> L3 -->
+        <mxCell id="e-cmd" value="指令 / 审阅 PR" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;strokeWidth=2;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0.25;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="expert" target="l3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-report" value="日报 · 待审变更 · 进化报告" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;strokeWidth=2;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0.75;exitY=0;entryX=0.75;entryY=1;" edge="1" parent="1" source="l3" target="expert">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ① L3 -> L4 -->
+        <mxCell id="e-fb" value="① 使用中的反馈（纠正 / 偏好 / 新事实）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#B85450;strokeWidth=2;fontSize=12;fontColor=#B85450;labelBackgroundColor=#FFFFFF;exitX=0.15;exitY=1;entryX=0.4;entryY=0;" edge="1" parent="1" source="l3" target="l4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ② L4 -> L2 -->
+        <mxCell id="e-evolve" value="② 进化动作：更新底座 · 技能发版触达 · 调优" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#B85450;strokeWidth=2;fontSize=12;fontColor=#B85450;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="l4" target="l2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- L2 -> L3 加载 -->
+        <mxCell id="e-load" value="加载「已知 + 怎么干」" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=2;fontSize=12;fontColor=#50812F;labelBackgroundColor=#FFFFFF;exitX=0.7;exitY=0;entryX=0.7;entryY=1;" edge="1" parent="1" source="l2" target="l3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ③ L1 -> L2 -->
+        <mxCell id="e-settle" value="③ 沉淀：抽取 → 合并 → compaction" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#B85450;strokeWidth=2;fontSize=12;fontColor=#B85450;labelBackgroundColor=#FFFFFF;exitX=0.3;exitY=0;entryX=0.3;entryY=1;" edge="1" parent="1" source="l1" target="l2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ⑤ L0 -> L1 -->
+        <mxCell id="e-stream" value="⑤ 原始信息流" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6C8EBF;strokeWidth=2;fontSize=12;fontColor=#6C8EBF;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="l0" target="l1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ④ L4 -> L0 -->
+        <mxCell id="e-tune" value="④ 传感器与提示词调优" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#B85450;strokeWidth=2;fontSize=12;fontColor=#B85450;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.7;entryX=0;entryY=0.5;" edge="1" parent="1" source="l4" target="l0">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="695" />
+              <mxPoint x="90" y="1180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
