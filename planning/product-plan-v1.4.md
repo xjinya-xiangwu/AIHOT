@@ -57,7 +57,7 @@
 - **L0→L1 内容更新管线**（机制而非独立层，§4.2）：相关性过滤（一票否决）→ 结构化抽取 → 去重合并 → git PR → 周期 compaction
 - **L1 技能包层＝Agent 执行环境**（★首发可售，已有基础）：asp packs（base + 角色层）——skills / AGENTS.md / prompts / MCP 配置 / 模型推荐档位 / 成本参数，由 **L0 情报与 L2 使用反馈双轮更新**
 - **L2 知识底座**（🔴GAP）：**由使用沉淀**（高频技能 / 被改 prompt / 模型选择 / 纠错偏好）+ 专家反馈 → 实体档案 · 事实时间线 · 领域 SOP · 案例库 · 术语表 · 立场偏好——**分私人层/工作层（见 §4.0）**
-- **L3 协同层**：ZCode/Codex 会话 · 通用 skills · Agent-sync · memory · MCP 工具 · asp 分发
+- **L3 协同层**：ZCode/Codex 会话 · 通用 skills · memory · MCP 工具 · **L3a 分发（asp）** + **L3b 跨端同步底座（Agent-sync，D14：凭证加密同步 + MCP 拉齐，见 sync-plane-design.md）**
 - **L4 进化层**（🔴GAP）：反馈三通道 → 周审 → 进化动作（改底座/迭代技能/调优传感器）——**行为变更须过 §4.3 发布回归门**
 
 进化闭环（D12 修正）：L0 情报经管线沉淀为 **L1 包内容**（新技能入包 / 模型推荐档 / MCP 清单 / 成本参数）→ 用户实际使用产生反馈与使用数据 → **L2 沉淀**使用知识与专家纠错 → L4 经周审与回归门更新 L1 包与判断标准 → 反哺 L3/L4 产品设计。两大项目咬合点升级：asp 既是 **L1 载体**又是分发渠道，AIHOT 是 **L0 传感器**（内容范围见 D12）——未来商品经同一条 asp 渠道分发。
@@ -189,7 +189,7 @@ gold 拆分：`gold-selection.jsonl`（M1 传感器精选校准）与 `gold-skil
 | AI-cold-start（asp/packs/collector） | L3 分发器 + L0 技能生态感知 + soft skills 商品化 | packs 增 domain-pack 类型（v1）；collector 接入 L1；**接入前过 §4.0** |
 | AIHOT fork（aihot-lab） | L0 领域情报传感器 | Docker 跑通；AI pack 制作（Phase B，依赖 A0/A1 门槛） |
 | 家族 A/B 执行方案 | L2 冷启内容 + 商业化输入 | **去敏提炼**入 sops/（§4.0） |
-| ZCode memory / Agent-sync | L3 个人层 + 跨端同步 | harvesting 进 positions 通用区经发布门；**私有仓库承载 private/** |
+| ZCode memory / Agent-sync | L3 个人层 + **L3b 跨端同步底座**（D14：凭证加密同步 + MCP 快速拉齐） | 独立仓库 Agent-sync 并入 SIAE 子模块，设计见 [sync-plane-design.md](sync-plane-design.md)；harvesting 进 positions 通用区经发布门；**私有仓库承载 private/** |
 | Lark 知识库 | L2 发布面 | 单向 git→Lark，**逐批过发布门** |
 | wind/ifind MCP | L3 工具层 | 领域技能直接调用（金融类 pack） |
 | **SIAE 总控仓库**（github.com/xjinya-xiangwu/SIAE） | 全局总控视图：子模块指针（aihot、ai-cold-start）+ 状态快照 + 文档导航 | 每次阶段变更时同步其 README 状态节与子模块指针 |
@@ -293,6 +293,7 @@ gold 拆分：`gold-selection.jsonl`（M1 传感器精选校准）与 `gold-skil
 | D11 | 工具融合：五原则（许可白名单/数据边界 P0/单一事实源/硬分叉/时机纪律）+ 分层选型（§5.1） | 原则**已定**；具体采用件**暂定**（PoC/实测后转已定） | 徐劲亚 | A1/B/C 各阶段 PoC 与实测记录 | 随对应 Phase |
 | D12 | **L0 窄化**（只收 agent-usage 情报：新模型/harness/skills·插件/便宜算力，一票否决剔除其余）+ **L1 重定义为技能包层＝Agent 执行环境（首发可售）** + L2 由使用沉淀、反哺 L3/L4 产品设计 | **已定** | 徐劲亚 | A0 盲评 + L1 周更流水线首跑 | 2026-09-30 |
 | D13 | **渠道交付形态 v2**：电商发一段安装代码（token 绑订单+服务端周签 URL 7 天过期）；本地 UI 选择式安装（TUI 兜底）；更新触达三档（L2 勾选式自动更新默认关/L1 群通知/L0 重跑兜底）；转卖=转卖 token 可断供；EULA"转售即分销"30% 返佣；zip 降私域兜底 | **已定（设计冻结）** | 徐劲亚 | v1.0 实施（约 2-3 天）+ 首批付费实测 | 2026-09-30 |
+| D14 | **Agent-sync 并入 SIAE 为 L3b 跨端同步底座**：①跨端凭证**加密**同步（age 信封加密，明文永不入库/入对话）②各端 MCP 能力快速拉齐（canonical 注册表 → 8 端生成 → 值填充 → doctor 体检）；与 asp 的字段级契约：asp 写结构、agent-sync 填值；同时是 ONBOARDING-V2 W2 凭据钱包的跨端通道 | **已定（v0 设计冻结，M-S1 已执行）** | 徐劲亚 | M-S2 两台真机互测 + M-S3 八端拉齐实测 | 2026-10-01 |
 
 ---
 
