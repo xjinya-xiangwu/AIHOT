@@ -1,7 +1,8 @@
-# Agent环境 · 产品规划 v1.1
+# Agent环境 · 产品规划 v1.2
 
 > v1.1（2026-09-29）：按 PM Critic 审查（1 P0 / 7 P1 / 2 P2）修订。主要变更：新增 **§4.0 数据准入与流转矩阵（P0，先于一切入库工作）**；路线图插入 **Phase A0 最小闭环试验**（F-04）并全链路加 go/no-go（F-10）；事实模型扩为七字段（F-06）；指标从产量改为质量阶段门（F-05）；行为变更加发布回归门（F-07）；明确首发购买者假设与商品边界（F-02/F-09）；增加单位经济账模板（F-08）；"配合 1-2 年默契"标注为**待验证主张**（F-03）。
 > v1.0（2026-09-29）：初版。
+> v1.2（2026-09-30）：**SIAE 总控仓库建立**（github.com/xjinya-xiangwu/SIAE——总控视图，子模块 aihot + ai-cold-start，本规划单一事实源仍在 fork planning/）；**工具融合调研结论并入**（§5.1 选型、§7 引入时机、§9 D11）。核心结论：治理层（三层分区+发布门+七字段+周审）无现成方案、自建＝护城河；promptfoo/instructor/crawl4ai/RSSHub/github-mcp-server 按阶段引入；AGPL 项目仅外部服务消费。
 
 ## §1 产品定位
 
@@ -188,6 +189,29 @@ gold 拆分：`gold-selection.jsonl`（M1 传感器精选校准）与 `gold-skil
 | ZCode memory / Agent-sync | L3 个人层 + 跨端同步 | harvesting 进 positions 通用区经发布门；**私有仓库承载 private/** |
 | Lark 知识库 | L2 发布面 | 单向 git→Lark，**逐批过发布门** |
 | wind/ifind MCP | L3 工具层 | 领域技能直接调用（金融类 pack） |
+| **SIAE 总控仓库**（github.com/xjinya-xiangwu/SIAE） | 全局总控视图：子模块指针（aihot、ai-cold-start）+ 状态快照 + 文档导航 | 每次阶段变更时同步其 README 状态节与子模块指针 |
+
+### §5.1 外部组件选型（工具融合，2026-09-30）
+
+> 完整调研（约 40 仓逐仓核验：星数/许可证原文/最近提交/刷星剔除）见 Notion《工具融合调研·GitHub 现成方案候选清单 v1.0》。本节只存决策，不复制矩阵。
+
+**五原则**：①许可白名单——MIT/Apache-2.0 进代码分发链，AGPL/无许可项目只作外部服务消费其输出（消费 RSS/API 不涉及再分发义务）；②数据边界 P0——本地优先/自托管，云 SaaS 只处理公开层素材，接入前先在 §4.0 矩阵补行；③单一事实源不漂移——git+md 永远是 L2 源，图库/向量库只是可丢弃可重建的索引层；④硬分叉纪律延伸——所有外部件锁版本+薄适配层+可替换路径；⑤时机纪律——A0 零新依赖，每个引入绑定路线图阶段。
+
+**选型结论**：
+
+| 层 | 组件（许可） | 融合方式 | 时机 |
+|---|---|---|---|
+| L4 | promptfoo（MIT） | §4.3 回归门执行器：gold+held-out 声明式测试集+CI 卡口（与 gold-selection.jsonl 商品形态对齐） | A1 后 PoC |
+| L1/L3 | github-mcp-server（MIT） | 每日 PR/分 commit/周审 merge/CI 触发的机制层 | A1 |
+| L1 | instructor（MIT） | 结构化抽取库：七字段事实 schema 化输出（抽取用便宜模型，落 md 归我们的管线） | Phase C |
+| L0 | crawl4ai（Apache-2.0） | 网页类信源抓取执行器（→LLM 友好 markdown），不改 AIHOT 主干 | Phase B |
+| L0 | RSSHub（**AGPL**） | **仅外部服务**：自部署/公共实例的 feed 直接接入信源，代码不进链 | Phase B |
+| L2 | graphiti（Apache-2.0） | v1 检索索引层首选：双时态模型与七字段同构（valid_at/invalid_at ↔ pub/ver，失效链 ↔ sup）；md 仍是唯一源，索引可重建；后端 Neo4j/FalkorDB（Kuzu 已弃用） | v1 MCP 检索阶段评估 |
+| L4 | mem0（Apache-2.0） | 通道① 会话事实抽取候选；只作会话工作记忆，确认的偏好/纠错仍走 git PR 进 positions | Phase C/D 评估 |
+
+**排除清单（要点）**：AGPL（basic-memory/khoj/honcho）理念再贴近也不进代码链；agent 平台类（letta/MemOS）与「环境而非平台」定位冲突，引入即被运行时绑定；无许可/NOASSERTION（Wechat2RSS/Hyper-Extract 代码部分）默认保留所有权利，仅可作外部服务；langfuse EE 功能不进分发链。星数须 API 复核交叉验证（调研中已剔除 26.9 万星刷星嫌疑仓库）。
+
+**治理层自建清单（＝差异化本体，不外包）**：三层分区与发布门 checklist、七字段 schema 与 90 天复核期、去重规则与 pending 双链、周审 checklist 与审阅预算、compaction（合并+过期降级+sup 链）、SOP→skill 编译规则、回归门留档规范（批准人/版本号/回滚）。
 
 ## §6 商业化（全部为假设，门槛=真实付费）
 
@@ -229,6 +253,8 @@ gold 拆分：`gold-selection.jsonl`（M1 传感器精选校准）与 `gold-skil
 
 每个 Phase 启动时在本表追加"批准人与启动日期"；no-go 触发即停，不自动顺延。
 
+**外部组件引入时机**（选型理由见 §5.1 与 Notion《工具融合调研》快照）：**A0 零新依赖**（手工闭环验证假设）→ **A1** 起用 github-mcp-server（PR 机制层）+ promptfoo 回归门 PoC（gold 冒烟）→ **B** 接入 crawl4ai（网页信源）+ 自部署 RSSHub（中文源，外部服务；jina reader 与 crawl4ai 二选一定型）→ **C** instructor 进抽取环节（阶段末评估 mem0 进通道①）→ **D** promptfoo 回归门常态化（≥2 次真实变更留档）+ opik/langfuse 按观测需求二选一 → **v1** graphiti 检索索引评估（md→索引重建、语义+时态查询、成本实测走 §4.2 护栏）。
+
 ## §8 风险与对策
 
 | 风险 | 对策 |
@@ -257,6 +283,7 @@ gold 拆分：`gold-selection.jsonl`（M1 传感器精选校准）与 `gold-skil
 | D8 | 架构图以 DrawIO 维护 | 已定 | 徐劲亚 | — | 已定 2026-09-29 |
 | D9 | AI-cold-start 商品页身份口径（真名 vs 匿名） | 待决 | 徐劲亚 | 与在职身份的冲突自查 | W3 上架前（硬时限） |
 | D10 | Phase A0 启动时间 | **已定**（2026-09-29 启动） | 徐劲亚 | — | 已执行 |
+| D11 | 工具融合：五原则（许可白名单/数据边界 P0/单一事实源/硬分叉/时机纪律）+ 分层选型（§5.1） | 原则**已定**；具体采用件**暂定**（PoC/实测后转已定） | 徐劲亚 | A1/B/C 各阶段 PoC 与实测记录 | 随对应 Phase |
 
 ---
 
