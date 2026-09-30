@@ -38,6 +38,8 @@ SIAE 仓库结构增加第三个子模块 `agent-sync/`（指针，内容在上�
 
 ## §3 职责一：跨端凭证加密同步
 
+> **实施级详细规格已定稿**：[sync-credentials-spec.md](sync-credentials-spec.md) v1.0（威胁矩阵 / age 密钥体系与生命周期 / secrets-map 映射 / seal·open·doctor·rotate-key·lint 命令规格 / 事件响应 runbook / T1-T8 验收矩阵）。本节保留设计原则概览，细节以 spec 为准。
+
 ### 3.1 威胁模型
 
 - **仓库端点不可信**（GitHub、未来任何远端）：密文入库可接受（信封加密，公钥加密）；明文入库不可接受。
@@ -116,7 +118,7 @@ canonical registry ──setup-mcp──▶ 各端配置结构（占位符）
 | 里程碑 | 内容 | 规模 | 状态 |
 |---|---|---|---|
 | **M-S1 仓库转型** | 定位重写（本设计）、模板去密钥残留、转私有、AGENTS.md 增补 SIAE 上下文 | 0.5 天 | ✅ 2026-10-01 |
-| **M-S2 加密同步 v0** | age 集成、credentials/ 分区、seal/open 命令、两台真机互测 | 3-5 天 | 待排 |
+| **M-S2 加密同步 v0** | age 集成、credentials/ 分区、seal/open/doctor/lint 命令，两台真机互测（T1-T8 矩阵） | 3-5 天 | **设计定稿**（spec v1.0，2026-10-01）；实施待排 |
 | **M-S3 MCP 拉齐** | setup-mcp 扩 8 端 + open 填值 + doctor 体检，真机全端验证 | 1 周 | 待排 |
 | **M-S4 接入主线** | 与 ONBOARDING-V2 W2 凭据钱包联通（agent-sync 为其跨端通道）；A0 过线后进 asp 正式排期 | 随 W2 | 待排 |
 

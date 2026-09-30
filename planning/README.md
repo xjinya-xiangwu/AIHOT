@@ -8,6 +8,7 @@
 |---|---|
 | product-plan-v1.4.md | 《Agent环境 · 产品规划 v1.4》——定位与价值链 / 五层架构 / 数据边界 P0 / GAP 模块 v0 设计 / 现有资产整合地图（§5，含外部组件选型 §5.1）/ 商业化 / 路线图 go-no-go / 决策记录 D1-D14 |
 | sync-plane-design.md | **跨端同步底座设计 v0**（D14）——Agent-sync 并入 SIAE 的顶层设计：凭证加密同步（age 信封加密）+ MCP 能力快速拉齐 + 与 asp 的字段级分工契约 |
+| sync-credentials-spec.md | **跨端凭证加密同步 · 详细规格 v1.0**（M-S2）——威胁矩阵 / age 密钥体系与设备生命周期 / secrets-map 占位符映射 / seal·open·doctor·rotate-key·lint 命令规格 / 事件响应 runbook / T1-T8 验收矩阵 |
 | agent-env-architecture.drawio | 五层架构图源文件（可用 app.diagrams.net 打开编辑） |
 | A0-protocol.md | Phase A0 最小闭环试验协议（盲评前后对照 + 付费意向验证） |
 | L0-content-strategy.md | L0 内容策略 v1.1（三支柱 + 产品化 IA） |
