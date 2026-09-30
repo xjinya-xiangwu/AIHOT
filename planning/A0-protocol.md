@@ -45,3 +45,4 @@
 | 2026-09-29 | A0 启动；S1 素材 20 条（aihot.news feed）；S2 简报 v0 完成 | 素材窗口 09-28~09-29 |
 | 2026-09-30 | **D12 设计修正**：任务重构为「Agent 使用情报周报」（L0 窄化 + L1=技能包层首发可售）；v0 基线保留——其内容按新标准大多属『不相关』，专家批注即产生首批 gold 负样本，正好用于新传感器校准 | 见 product-plan-v1.3.md §1/§7/§9 |
 | 2026-09-30 | **S3 首批批注收到**：12 条中 2 条合规（Sonnet 5.5 评测、Holo4 发布）→ gold 正样本；10 条不合规 → gold 负样本。内容方向修正为三支柱（模型榜 / GitHub 周榜 agent-usage 过滤 / harness 必装集合）。社媒需求验证 + AIHOT 组件映射完成：三支柱全部可由现有组件覆盖（内建 leaderboard 模块保留 + GitHubTrendingRSS + 多类信源），零新造轮子 | 见 L0-content-strategy.md；S5 盲评前按三支柱标准重做周报 v1 |
+| 2026-09-30 | **S4 首轮更新完成**（positions P-003/P-004 修订 + 三支柱策略固化）；**周报 v1 产出**（三支柱标准首期，全部素材来自策略指定通道且三通道实测验证：leaderboard ✅ / GitHubTrendingRSS ✅ / awesome 清单 ⚠️无 LICENSE 仅信源）。S5 盲评就绪——调整：v0 已判废（基线可采纳率 2/12≈17%），v1 直接按四项指标评，动作清单可采纳率目标 ≥80% | 周报：本地 deliverables/2026-09-30-agent-usage-weekly-v1.md |
