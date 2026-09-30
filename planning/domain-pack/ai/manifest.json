@@ -1,0 +1,44 @@
+{
+  "$comment": "AI Domain Pack 初稿 v0.1（2026-09-30）。部署目标：AIHOT 实例 industry/。品牌未定稿——禁用 AIHOT 名称与 Logo（上游 NOTICE）；mcpPrefix 为占位，上线前定稿且定稿后不可改。",
+  "pack": "ai",
+  "version": "0.1.0",
+  "date": "2026-09-30",
+  "pillars": {
+    "P1_models": "三层模型榜：闭源共识（内建 leaderboard）+ 开源 trending（HF API）+ 垂域站榜（Civitai 等，按需）",
+    "P2_projects": "项目周榜：全量（agent-usage 过滤）+ 角色分榜（PM/开发者…，categories 承载）",
+    "P3_must_have": "harness 必装集合：CC/Codex/Cursor 的 skills·插件·MCP 精选与新增动态，含'该删什么'"
+  },
+  "features": {
+    "leaderboard": true,
+    "codexResetMonitor": true
+  },
+  "taxonomy": {
+    "categories": ["models", "environment", "skills", "compute", "discussion"],
+    "note": "见 taxonomy.draft.ts；key 进 URL，上线后不可改"
+  },
+  "sources": {
+    "count": 15,
+    "freeNoKey": 12,
+    "needsSocialData": 2,
+    "needsDajiala": "公众号源待 key 后补（AI 工具类公众号 2-4 个）",
+    "verification": "部署时逐源'试抓'校验（后台信源页）；$comment 标注了不确定项"
+  },
+  "dependencies": {
+    "required": [],
+    "optional": {
+      "ARTIFICIAL_ANALYSIS_API_KEY": "leaderboard 的 AA 评测项",
+      "SOCIALDATA_API_KEY": "x_search 信源 + codexResetMonitor",
+      "DAJIALA_KEY": "公众号信源",
+      "JINA_API_KEY": "web_list 抓取兜底"
+    }
+  },
+  "deployment": {
+    "gate": "A0/A1 go + Docker 就绪 + 品牌定稿 + taxonomy key 定稿",
+    "steps": [
+      "industry/ 替换为本包内容（site.ts 品牌定稿 / taxonomy.ts 定稿 / sources.json 导入 / prompts 并入三支柱标准）",
+      "scripts/seed.ts 导入信源与主题",
+      "后台逐源试抓校验",
+      "gold 并入 .data/gold.jsonl（扩展至 100-200 条）跑 eval-selection 校准门槛"
+    ]
+  }
+}

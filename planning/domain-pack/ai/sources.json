@@ -1,0 +1,228 @@
+{
+  "$comment": "AI Domain Pack 信源初稿 v0.1（D12：只收 agent-usage 相关）。json_list 字段路径按 packages/backend/src/sources/config-keys.ts；标 $draft 的配置部署时在后台'试抓'校验后修正。默认 site_fulltext/syndicate_fulltext 全关（只摘要+链接）。",
+  "sources": [
+    {
+      "id": "json-hf-trending",
+      "name": "HuggingFace Trending Models",
+      "kind": "json_list",
+      "config": {
+        "url": "https://huggingface.co/api/models?sort=trendingScore&direction=-1&limit=30",
+        "itemsPath": "$",
+        "titlePaths": ["id"],
+        "urlTemplate": "https://huggingface.co/{id}",
+        "publishedAtPath": "createdAt",
+        "publishedAtUnit": "s",
+        "externalIdPath": "id",
+        "_draft": "itemsPath 对根数组的写法部署时校验；可加 summaryPaths 拼接 pipeline_tag/downloads/likes"
+      },
+      "tier": "T1_5",
+      "first_party": true,
+      "owner_entity_id": "hugging-face",
+      "participation_mode": "editorial",
+      "interval_minutes": 180,
+      "tags": ["开源模型", "P1"],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "json-civitai-weekly",
+      "name": "Civitai Weekly (垂域，按需)",
+      "kind": "json_list",
+      "config": {
+        "url": "https://civitai.com/api/v1/models?limit=20&sort=Most Downloaded&period=Week",
+        "itemsPath": "items",
+        "titlePaths": ["name"],
+        "urlTemplate": "https://civitai.com/models/{id}",
+        "publishedAtPath": "lastVersionAt",
+        "publishedAtUnit": "s",
+        "externalIdPath": "id",
+        "_draft": "垂域图像生成榜；对应垂域 pack 启用前可先隔离观察"
+      },
+      "tier": "T2",
+      "first_party": true,
+      "owner_entity_id": "civitai",
+      "participation_mode": "isolated",
+      "interval_minutes": 720,
+      "tags": ["垂域", "P1"],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-openai-news",
+      "name": "OpenAI News",
+      "kind": "rss",
+      "config": { "feedUrl": "https://openai.com/news/rss.xml", "_aihot": { "initialBackfillLimit": 5 } },
+      "tier": "T1", "first_party": true, "owner_entity_id": "openai",
+      "participation_mode": "editorial", "interval_minutes": 120,
+      "tags": ["官方", "P1"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-anthropic-news",
+      "name": "Anthropic News",
+      "kind": "rss",
+      "config": { "feedUrl": "https://www.anthropic.com/rss.xml", "_aihot": { "initialBackfillLimit": 5 }, "_draft": "URL 试抓校验" },
+      "tier": "T1", "first_party": true, "owner_entity_id": "anthropic",
+      "participation_mode": "editorial", "interval_minutes": 120,
+      "tags": ["官方", "P1"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-deepmind",
+      "name": "Google DeepMind Blog",
+      "kind": "rss",
+      "config": { "feedUrl": "https://deepmind.google/blog/rss.xml", "_aihot": { "initialBackfillLimit": 5 } },
+      "tier": "T1", "first_party": true, "owner_entity_id": "google",
+      "participation_mode": "editorial", "interval_minutes": 180,
+      "tags": ["官方", "P1"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-hf-blog",
+      "name": "Hugging Face Blog",
+      "kind": "rss",
+      "config": { "feedUrl": "https://huggingface.co/blog/feed.xml", "_aihot": { "initialBackfillLimit": 5 } },
+      "tier": "T1", "first_party": true, "owner_entity_id": "hugging-face",
+      "participation_mode": "editorial", "interval_minutes": 180,
+      "tags": ["官方", "开源", "P1"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-meta-ai",
+      "name": "Meta AI Blog",
+      "kind": "rss",
+      "config": { "feedUrl": "https://ai.meta.com/blog/rss/", "_aihot": { "initialBackfillLimit": 5 }, "_draft": "URL 试抓校验" },
+      "tier": "T1", "first_party": true, "owner_entity_id": "meta",
+      "participation_mode": "editorial", "interval_minutes": 240,
+      "tags": ["官方", "P1"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "web-zai-blog",
+      "name": "智谱 Z.ai Blog",
+      "kind": "web_list",
+      "config": {
+        "url": "https://z.ai/blog",
+        "parseMode": "markdown",
+        "itemSelector": "a[href*='/blog/']",
+        "_draft": "选择器部署时试抓校验"
+      },
+      "tier": "T1", "first_party": true, "owner_entity_id": "zhipu",
+      "participation_mode": "editorial", "interval_minutes": 240,
+      "tags": ["官方", "P1"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-qwen-blog",
+      "name": "Qwen Blog",
+      "kind": "rss",
+      "config": { "feedUrl": "https://qwenlm.github.io/index.xml", "_aihot": { "initialBackfillLimit": 5 }, "_draft": "URL 试抓校验" },
+      "tier": "T1", "first_party": true, "owner_entity_id": "qwen",
+      "participation_mode": "editorial", "interval_minutes": 240,
+      "tags": ["官方", "开源", "P1"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "web-openrouter-rankings",
+      "name": "OpenRouter Rankings（真实用量）",
+      "kind": "web_list",
+      "config": {
+        "url": "https://openrouter.ai/rankings",
+        "parseMode": "markdown",
+        "_draft": "选择器部署时试抓校验；真实用量榜是共识榜的互补信号"
+      },
+      "tier": "T1_5", "first_party": true, "owner_entity_id": "openrouter",
+      "participation_mode": "editorial", "interval_minutes": 720,
+      "tags": ["用量", "P1"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-gh-trending-weekly",
+      "name": "GitHub Trending Weekly",
+      "kind": "rss",
+      "config": { "feedUrl": "https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml", "_aihot": { "initialBackfillLimit": 10 } },
+      "tier": "T2", "first_party": false,
+      "participation_mode": "editorial", "interval_minutes": 360,
+      "tags": ["周榜", "P2"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-gh-trending-daily",
+      "name": "GitHub Trending Daily",
+      "kind": "rss",
+      "config": { "feedUrl": "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml", "_aihot": { "initialBackfillLimit": 10 } },
+      "tier": "T2", "first_party": false,
+      "participation_mode": "editorial", "interval_minutes": 360,
+      "tags": ["日榜", "P2"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-producthunt",
+      "name": "Product Hunt（PM 角色分榜信源）",
+      "kind": "rss",
+      "config": { "feedUrl": "https://www.producthunt.com/feed", "_aihot": { "initialBackfillLimit": 5 } },
+      "tier": "T2", "first_party": false,
+      "participation_mode": "editorial", "interval_minutes": 360,
+      "tags": ["角色:PM", "P2"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-gh-blog",
+      "name": "GitHub Blog",
+      "kind": "rss",
+      "config": { "feedUrl": "https://github.blog/feed/", "_aihot": { "initialBackfillLimit": 5 } },
+      "tier": "T1", "first_party": true, "owner_entity_id": "github",
+      "participation_mode": "editorial", "interval_minutes": 360,
+      "tags": ["官方", "P2"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-awesome-codex-skills",
+      "name": "awesome-codex-skills Commits（仅信源引用，仓库无 LICENSE）",
+      "kind": "rss",
+      "config": { "feedUrl": "https://github.com/composio-community/awesome-codex-skills/commits/main.atom", "_aihot": { "initialBackfillLimit": 5 } },
+      "tier": "T2", "first_party": false,
+      "participation_mode": "editorial", "interval_minutes": 720,
+      "tags": ["P3", "无LICENSE仓库"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-awesome-claude-code",
+      "name": "awesome-claude-code Commits",
+      "kind": "rss",
+      "config": { "feedUrl": "https://github.com/hesreallyhim/awesome-claude-code/commits/master.atom", "_draft": "分支名试抓校验" },
+      "tier": "T2", "first_party": false,
+      "participation_mode": "editorial", "interval_minutes": 720,
+      "tags": ["P3"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "web-awesomeskill",
+      "name": "AwesomeSkill.ai（skills 收录站）",
+      "kind": "web_list",
+      "config": { "url": "https://awesomeskill.ai", "parseMode": "markdown", "_draft": "选择器部署时试抓校验" },
+      "tier": "T2", "first_party": false,
+      "participation_mode": "editorial", "interval_minutes": 720,
+      "tags": ["P3"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "x-cc-skills",
+      "name": "X 搜索：Claude Code skills/plugins",
+      "kind": "x_search",
+      "config": { "query": "\"claude code\" (skill OR plugin OR MCP) -filter:replies", "_draft": "查询词部署时调优" },
+      "tier": "T2", "first_party": false,
+      "participation_mode": "editorial", "interval_minutes": 120,
+      "tags": ["P3", "需SOCIALDATA"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "x-codex-skills",
+      "name": "X 搜索：Codex skills",
+      "kind": "x_search",
+      "config": { "query": "\"codex\" (skill OR plugin) -filter:replies", "_draft": "查询词部署时调优" },
+      "tier": "T2", "first_party": false,
+      "participation_mode": "editorial", "interval_minutes": 120,
+      "tags": ["P3", "需SOCIALDATA"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "id": "web-linuxdo-latest",
+      "name": "linux.do 最新（中转/算力讨论聚集地）",
+      "kind": "rss",
+      "config": { "feedUrl": "https://linux.do/latest.rss", "_draft": "噪声偏高，靠精选门槛压制" },
+      "tier": "T2", "first_party": false,
+      "participation_mode": "editorial", "interval_minutes": 120,
+      "tags": ["算力/中转", "P1"], "site_fulltext": false, "syndicate_fulltext": false
+    },
+    {
+      "$comment": "占位：tokens 中转/算力平台公告源（如各平台 changelog 页、API 定价页 web_list），部署时按当期主流平台补 2-4 个。"
+    },
+    {
+      "$comment": "占位：公众号源（AI 工具/agent 类 2-4 个）待 DAJIALA_KEY 后加，kind=mp_account。"
+    }
+  ]
+}
