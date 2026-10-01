@@ -1,0 +1,65 @@
+# 专家标注队列（生成 2026-10-01 18:00）
+
+**10 分钟标注法**：逐行把 `[ ]` 改为 `[a]`（该收）/`[r]`（该拒）/`[bP1]`（改桶到 P1，类推）。
+完成后转存 `labeled.jsonl`（每行 {"id":..,"label":"a"}）跑 `--eval`。
+**管线 accept/reject 仅供参考——你的标注才是 ground truth。**
+
+- [ ] (accept|P1_model_compute|19) Modal Clusters 正式发布，通过 @modal.clustered 提供多节点 GPU 集群
+- [ ] (accept|P4_method_quality|17) OpenRouter 教程：如何在 CI 中用 LLM eval 门禁拦截 Pull Request
+- [ ] (accept|P1_model_compute|19) OpenRouter 发布 Agent 模型成本与质量权衡选型框架
+- [ ] (accept|P4_method_quality|19) OpenRouter 指南：用置信度阈值实现模型分级升级路由
+- [ ] (accept|PM_industry_intel|16) Transluce 报告 AI 智能体以激进手段访问美加政府网站
+- [ ] (accept|P1_model_compute|19) Artificial Analysis：GPT-6.1 Sol 的 Cost per Task 较 GPT-6 Sol 低约 30%
+- [ ] (accept|PM_industry_intel|14) Artificial Analysis 评测 Gemini 4 Argon：Google 重回智能前三梯队
+- [ ] (accept|PM_industry_intel|17) Google DeepMind 发布 Gemini 4 Argon，面向可信网络防御者先行开放
+- [ ] (accept|PM_industry_intel|14) METR 主席 Chris Painter 就 AI 智能体事件向美国参议院作证
+- [ ] (accept|PM_industry_intel|20) Perplexity 开放 Computer 邮件委托入口并限时免费运行任务
+- [ ] (accept|PM_industry_intel|16) Trump 推动二十余家科技公司签署自愿性 AI 安全协议
+- [ ] (accept|P1_model_compute|19) GPT-6.1 Sol (Max) 以 1759 分登上 Code Arena: WebDev 第 3 名
+- [ ] (accept|PM_industry_intel|14) OpenAI 披露并处置一起有组织的模型蒸馏攻击行动
+- [ ] (accept|PM_industry_intel|19) Factory Automations 正式开放：Droid 可定时或按事件自动执行工程工作流
+- [ ] (accept|PM_industry_intel|20) Anthropic 研究测算机器人对岗位的暴露度：机器人可做 74% 的物理任务但仅 0.3% 具备成本竞争力
+- [ ] (accept|PM_industry_intel|18) MIT 等机构发布 Ataraxos，以极低成本战胜顶级人类 Stratego 选手
+- [ ] (accept|P1_model_compute|19) ElevenLabs 完成 3 亿美元员工股份回购，估值升至 220 亿美元
+- [ ] (accept|PM_industry_intel|16) Google DeepMind 发布 SynthID Bio，为 AI 生成的蛋白质嵌入可验证水印
+- [ ] (accept|PM_industry_intel|14) FTC 以消费者保护为由对 OpenAI、Anthropic 等 AI 实验室启动全面调查
+- [ ] (accept|P1_model_compute|18) vLLM 分离式推理（Disaggregated Serving）实用指南
+- [ ] (accept|P1_model_compute|18) Artificial Analysis 开源 AA-AgentPerf-Local，测试笔记本与工作站上本地 AI 智能体推理性能
+- [ ] (accept|PM_industry_intel|14) Anthropic 与 SpaceX 签署最高 845 亿美元算力协议，可提前 90 天通知解除
+- [ ] (accept|PM_industry_intel|16) 纽约时报报道 OpenAI 在 AI 失控前已接到员工安全警告但被无视
+- [ ] (accept|P1_model_compute|19) GamersNexus 分析内存厂商以长期协议锁定产能，消费级 RAM 与 SSD 价格一年大涨
+- [ ] (accept|P4_method_quality|17) OpenRouter 教程：如何测试 AI Agent 的工具调用准确性
+- [ ] (accept|P4_method_quality|18) OpenRouter 教程：如何从生产流量构建 golden 评测集并跨模型复测
+- [ ] (accept|P4_method_quality|17) OpenRouter 教程：提示词或模型变更后如何对 AI Agent 做回归测试
+- [ ] (accept|P1_model_compute|24) Arena 开放限时测试 Claude Sonnet 5.5，Direct Mode 可用 48 小时
+- [ ] (accept|P1_model_compute|21) OpenAI DevDay 2026 发布 Dots、GPT-6.1 Sol、500美元订阅等一揽子更新
+- [ ] (accept|P4_method_quality|16) Jensen Huang 称行业领袖在白宫签署超级智能协定
+- [ ] (accept|PM_industry_intel|18) OpenAI 据报道洽谈以约 1.4 万亿美元估值融资至少 300 亿美元
+- [ ] (accept|P2_skills_tools|21) rehan-remade/universal-modder ⭐1129：Point Claude at any game. Skills, tools and 
+- [ ] (accept|P2_skills_tools|21) echris6/motion-video-kit ⭐707：Claude Code skill kit for premium AI-assisted busi
+- [ ] (accept|P2_skills_tools|21) Barty-Bart/motion-graphics ⭐372：Motion-graphics skills for Claude Code and Codex
+- [ ] (accept|P2_skills_tools|21) zhuyansen/awesome-claude-video-skills ⭐342：Open-source skills and toolkits that 
+- [ ] (accept|P2_skills_tools|21) howseen-ai/claude-motion-design ⭐142：A Claude Code skill to make motion design v
+- [ ] (accept|P2_skills_tools|21) Jakeschincariol/arena-skill ⭐124：When Claude keeps giving you bad answers, make 
+- [ ] (accept|P2_skills_tools|21) CaptureGrubEnchant/SolidWorks ⭐355：SolidWorks MCP Server connects an AI assistan
+- [ ] (accept|P2_skills_tools|21) admte/orc-claude-plugin ⭐127：Claude plugin for the ORC8R Cloud MCP server
+- [ ] (accept|P2_skills_tools|21) springvoiceswell/semrush-ai-tool ⭐103：Semrush SEO AI-powered analysis tool MCP s
+- [ ] (accept|P2_skills_tools|21) feder-cr/dots ⭐1983：Open-source dots for the web: an AI agent with its own brows
+- [ ] (accept|P2_skills_tools|21) kaankiziltug/logo-design-skill ⭐1225：A comprehensive logo-design skill for Claud
+- [ ] (accept|P2_skills_tools|21) nanaism/yomiyasu ⭐721：AI生成された文章の不自然さを取り除き、人間にとって自然な日本語へ書き直すためのAgent Skill
+- [ ] (accept|P2_skills_tools|21) amitshekhariitbhu/ai-system-design ⭐483：AI System Design - Learn how to design A
+- [ ] (accept|P2_skills_tools|21) openJiuwen-ai/iCode ⭐284：A lightweight, extensible, fully offline development pl
+- [ ] (accept|P2_skills_tools|21) composio-community/open-dot ⭐263：Open-source personal AI agents that work on the
+- [ ] (accept|P3_harness_env|16) anthropics/claude-code v2.1.286（2026-09-30）
+- [ ] (accept|P3_harness_env|18) sst/opencode v1.18.34（2026-09-30）
+- [ ] (accept|P3_harness_env|18) openai/codex rust-v0.161.0-alpha.9（2026-10-01）
+- [ ] (accept|P3_harness_env|16) google-gemini/gemini-cli v0.64.0-nightly.20261001.gc6bccb7ec（2026-10-01）
+- [ ] (reject|P2_skills_tools|14) ChatGPT 现可直接构建并部署 MCP 服务器
+- [ ] (reject|-|-) Gemini 4 Argon (High) 登 Arena Agent Arena 第 8 名，净提升 +7.92%
+- [ ] (reject|-|-) Hugging Face CEO 称收到数千条私信，将花几天逐一处理
+- [ ] (reject|P1_model_compute|17) 蚂蚁百灵发布 Ling-3.1-flash，面向真实世界长任务升级
+- [ ] (reject|P2_skills_tools|14) PromptArmor 披露 Copilot Cowork AI 网关被劫持绕过沙箱外传文件漏洞
+- [ ] (reject|P1_model_compute|17) DeepSeek 开源面向华为昇腾平台的基础设施组件
+- [ ] (reject|P1_model_compute|17) Sarvam AI 发布从第一性原理构建 AI 智能体的入门指南
+- [ ] (reject|P1_model_compute|17) GPT-6.1 Sol 发布 7 天后接替 GPT-6 Sol，智能指数距 GPT-6 Astra 仅 1 分
+- [ ] (reject|P1_model_compute|17) Gary Marcus 评论 OpenAI 在 Hugging Face 事件前数月已收到安全预警
