@@ -1,6 +1,7 @@
 {
-  "$comment": "AIHOT-style 关键词分类配置 v1 —— 周报=管线的传感器定义。每类映射到「帮助 agent 进化」的一个动作出口（D12/L0-weekly-spec 倒推）。匹配=标题或摘要命中任一关键词（中英任一）。PM 层仅在 --persona pm 时启用。",
-  "version": "1.0.0",
+  "$comment": "AIHOT-style 关键词分类配置 v1.1 —— 周报=管线的传感器定义。每类映射到「帮助 agent 进化」的一个动作出口（D12/L0-weekly-spec 倒推）。匹配=标题或摘要命中任一关键词（中英任一），负关键词命中则该支柱不收。PM 层仅在 --persona pm 时启用。",
+  "$calibration": "v1.1（2026-10-01 首跑校准）：5 个缺陷样本——误桶×1（机器人岗位研究含「成本」入 P1）、误杀×4（DeepSeek 昇腾 17 分 / P4 OpenRouter 教程×2 17 分 / FTC pm 层 14 分）。修法：P1 负关键词 + P4/PM 分支柱门槛 + P4 动作词扩充。",
+  "version": "1.1.0",
   "pillars": [
     {
       "id": "P1_model_compute",
@@ -12,7 +13,8 @@
         "国产模型", "智谱", "GLM", "DeepSeek", "Qwen", "Kimi", "MiniMax", "Ling", "昇腾",
         "推理成本", "成本", "token 价格", "中转", "算力平台", "GPU 集群", "vLLM", "自托管", "本地推理",
         "model release", "pricing", "price drop", "open weights", "open source model", "cost per task", "inference"
-      ]
+      ],
+      "negative_keywords": ["机器人", "岗位", "Stratego", "蛋白质", "材料科学", "就业"]
     },
     {
       "id": "P2_skills_tools",
@@ -22,7 +24,8 @@
         "skill", "技能", "plugin", "插件", "MCP server", "MCP 服务器", "marketplace", "技能市场",
         "awesome", "工具包", "toolkit", "CLI", "agent skill", "Claude Code skill", "安装", "一键安装",
         "stars", "新星", "trending", "GitHub Trending"
-      ]
+      ],
+      "negative_keywords": ["游戏 mod", "modding"]
     },
     {
       "id": "P3_harness_env",
@@ -69,5 +72,7 @@
     {"id": "breadth", "name": "适用面", "desc": "覆盖多少 agent 端/任务类型"},
     {"id": "credibility", "name": "可信度", "desc": "T1 官方发布/定价页 > T2 媒体/榜单 > 传闻"}
   ],
-  "thresholds": {"select_score_min": 3.5, "prescreen_hit": 1, "full_mark": 5}
+  "thresholds": {"select_score_min": 3.5, "prescreen_hit": 1, "full_mark": 5},
+  "pillar_thresholds": {"default": 18, "P4_method_quality": 15, "PM_industry_intel": 12},
+  "pillar_action_words": {"P4_method_quality": ["教程", "指南", "框架", "最佳实践", "回归测试", "评测"]}
 }
