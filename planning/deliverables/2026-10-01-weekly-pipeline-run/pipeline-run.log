@@ -1,13 +1,13 @@
 {
-  "run_at": "2026-10-01 17:23",
+  "run_at": "2026-10-01 17:38",
   "persona": "pm",
   "input": 40,
-  "selected": 22,
-  "vetoed": 18,
+  "selected": 35,
+  "vetoed": 5,
   "by_pillar": {
-    "P1_model_compute": 16,
-    "P4_method_quality": 2,
-    "PM_industry_intel": 4
+    "P1_model_compute": 14,
+    "P4_method_quality": 6,
+    "PM_industry_intel": 15
   },
   "veto_rules_used": [
     "V2_gossip",
