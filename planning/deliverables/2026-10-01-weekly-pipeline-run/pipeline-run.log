@@ -1,0 +1,17 @@
+{
+  "run_at": "2026-10-01 17:23",
+  "persona": "pm",
+  "input": 40,
+  "selected": 22,
+  "vetoed": 18,
+  "by_pillar": {
+    "P1_model_compute": 16,
+    "P4_method_quality": 2,
+    "PM_industry_intel": 4
+  },
+  "veto_rules_used": [
+    "V2_gossip",
+    "V4_ranking_only",
+    "V5_score"
+  ]
+}
