@@ -1,0 +1,59 @@
+{"id": "zbprvsawadktpi8tcqpp6gw4d", "pillar": "P1_model_compute", "title": "Modal Clusters 正式发布，通过 @modal.clustered 提供多节点 GPU 集群", "score": 19, "pipeline": "accept", "source": "aihot"}
+{"id": "ska7k3allx8q9uu8yv5vzy8zw", "pillar": "P4_method_quality", "title": "OpenRouter 教程：如何在 CI 中用 LLM eval 门禁拦截 Pull Request", "score": 17, "pipeline": "accept", "source": "aihot"}
+{"id": "v6j23p9krwwoxqvk05d9n0bfz", "pillar": "P1_model_compute", "title": "OpenRouter 发布 Agent 模型成本与质量权衡选型框架", "score": 19, "pipeline": "accept", "source": "aihot"}
+{"id": "hi9uy4borcat6ams9rk5vkamo", "pillar": "P4_method_quality", "title": "OpenRouter 指南：用置信度阈值实现模型分级升级路由", "score": 19, "pipeline": "accept", "source": "aihot"}
+{"id": "pmrfien75u21keottpq5php5z", "pillar": "PM_industry_intel", "title": "Transluce 报告 AI 智能体以激进手段访问美加政府网站", "score": 16, "pipeline": "accept", "source": "aihot"}
+{"id": "p3cwq54s9gugqpmljv3xm97lv", "pillar": "P1_model_compute", "title": "Artificial Analysis：GPT-6.1 Sol 的 Cost per Task 较 GPT-6 Sol 低约 30%", "score": 19, "pipeline": "accept", "source": "aihot"}
+{"id": "thdata2aa7ex9kgzv72mk4kn3", "pillar": "PM_industry_intel", "title": "Artificial Analysis 评测 Gemini 4 Argon：Google 重回智能前三梯队", "score": 14, "pipeline": "accept", "source": "aihot"}
+{"id": "uob3jvsb97uh5achwaggjrhqh", "pillar": "PM_industry_intel", "title": "Google DeepMind 发布 Gemini 4 Argon，面向可信网络防御者先行开放", "score": 17, "pipeline": "accept", "source": "aihot"}
+{"id": "r2far2n8h11f0h28301dhk85y", "pillar": "PM_industry_intel", "title": "METR 主席 Chris Painter 就 AI 智能体事件向美国参议院作证", "score": 14, "pipeline": "accept", "source": "aihot"}
+{"id": "zdncjvjrmmknlsf9tevjlrnrg", "pillar": "PM_industry_intel", "title": "Perplexity 开放 Computer 邮件委托入口并限时免费运行任务", "score": 20, "pipeline": "accept", "source": "aihot"}
+{"id": "huhcnz3mwim553m2t8c0jhh4b", "pillar": "PM_industry_intel", "title": "Trump 推动二十余家科技公司签署自愿性 AI 安全协议", "score": 16, "pipeline": "accept", "source": "aihot"}
+{"id": "t1wnqaj3xyl90ilvgy4poyc45", "pillar": "P1_model_compute", "title": "GPT-6.1 Sol (Max) 以 1759 分登上 Code Arena: WebDev 第 3 名", "score": 19, "pipeline": "accept", "source": "aihot"}
+{"id": "gq8k1ru5wb2hx8ihtno5rrlrf", "pillar": "PM_industry_intel", "title": "OpenAI 披露并处置一起有组织的模型蒸馏攻击行动", "score": 14, "pipeline": "accept", "source": "aihot"}
+{"id": "u33r5t71q9fo30jygm4iqnfm4", "pillar": "PM_industry_intel", "title": "Factory Automations 正式开放：Droid 可定时或按事件自动执行工程工作流", "score": 19, "pipeline": "accept", "source": "aihot"}
+{"id": "lzxm86234leqs91hbocegps1l", "pillar": "PM_industry_intel", "title": "Anthropic 研究测算机器人对岗位的暴露度：机器人可做 74% 的物理任务但仅 0.3% 具备成本竞争力", "score": 20, "pipeline": "accept", "source": "aihot"}
+{"id": "knj4jcg30hz6vujhwu7xqeplj", "pillar": "PM_industry_intel", "title": "MIT 等机构发布 Ataraxos，以极低成本战胜顶级人类 Stratego 选手", "score": 18, "pipeline": "accept", "source": "aihot"}
+{"id": "fkaymng16iu4hg5x53jpq7o8p", "pillar": "P1_model_compute", "title": "ElevenLabs 完成 3 亿美元员工股份回购，估值升至 220 亿美元", "score": 19, "pipeline": "accept", "source": "aihot"}
+{"id": "deivg466iwv9ypddacud3hd7d", "pillar": "PM_industry_intel", "title": "Google DeepMind 发布 SynthID Bio，为 AI 生成的蛋白质嵌入可验证水印", "score": 16, "pipeline": "accept", "source": "aihot"}
+{"id": "nhob7mih29e0owj7ay28t7fvw", "pillar": "PM_industry_intel", "title": "FTC 以消费者保护为由对 OpenAI、Anthropic 等 AI 实验室启动全面调查", "score": 14, "pipeline": "accept", "source": "aihot"}
+{"id": "seoe3daylyyh1pqcwj4cklrpe", "pillar": "P1_model_compute", "title": "vLLM 分离式推理（Disaggregated Serving）实用指南", "score": 18, "pipeline": "accept", "source": "aihot"}
+{"id": "uet0fx7vwv720jh2evuzmfbmm", "pillar": "P1_model_compute", "title": "Artificial Analysis 开源 AA-AgentPerf-Local，测试笔记本与工作站上本地 AI 智能体推理性能", "score": 18, "pipeline": "accept", "source": "aihot"}
+{"id": "tezd4474gysof1re07lje1xc3", "pillar": "PM_industry_intel", "title": "Anthropic 与 SpaceX 签署最高 845 亿美元算力协议，可提前 90 天通知解除", "score": 14, "pipeline": "accept", "source": "aihot"}
+{"id": "ndk15d5pv9et8zspxncqzh55y", "pillar": "PM_industry_intel", "title": "纽约时报报道 OpenAI 在 AI 失控前已接到员工安全警告但被无视", "score": 16, "pipeline": "accept", "source": "aihot"}
+{"id": "rag4wqxxj3qhsk4m61swzqpw9", "pillar": "P1_model_compute", "title": "GamersNexus 分析内存厂商以长期协议锁定产能，消费级 RAM 与 SSD 价格一年大涨", "score": 19, "pipeline": "accept", "source": "aihot"}
+{"id": "qu0zwrg9img0cfv03vtgmopbs", "pillar": "P4_method_quality", "title": "OpenRouter 教程：如何测试 AI Agent 的工具调用准确性", "score": 17, "pipeline": "accept", "source": "aihot"}
+{"id": "fibq25b0liw1wvpxc0kg5kktn", "pillar": "P4_method_quality", "title": "OpenRouter 教程：如何从生产流量构建 golden 评测集并跨模型复测", "score": 18, "pipeline": "accept", "source": "aihot"}
+{"id": "lq71il0lehssgkular7zs5ybl", "pillar": "P4_method_quality", "title": "OpenRouter 教程：提示词或模型变更后如何对 AI Agent 做回归测试", "score": 17, "pipeline": "accept", "source": "aihot"}
+{"id": "d3byj8l8prs0dpe0j1ontvd96", "pillar": "P1_model_compute", "title": "Arena 开放限时测试 Claude Sonnet 5.5，Direct Mode 可用 48 小时", "score": 24, "pipeline": "accept", "source": "aihot"}
+{"id": "fp91y0m21xsgu43nl7g81uecp", "pillar": "P1_model_compute", "title": "OpenAI DevDay 2026 发布 Dots、GPT-6.1 Sol、500美元订阅等一揽子更新", "score": 21, "pipeline": "accept", "source": "aihot"}
+{"id": "fr7dgcpa02ssu37g9fsmj5q9n", "pillar": "P4_method_quality", "title": "Jensen Huang 称行业领袖在白宫签署超级智能协定", "score": 16, "pipeline": "accept", "source": "aihot"}
+{"id": "hxdv40od8cwti1sfmkmursiop", "pillar": "PM_industry_intel", "title": "OpenAI 据报道洽谈以约 1.4 万亿美元估值融资至少 300 亿美元", "score": 18, "pipeline": "accept", "source": "aihot"}
+{"id": "gh-1397016507", "pillar": "P2_skills_tools", "title": "rehan-remade/universal-modder ⭐1129：Point Claude at any game. Skills, tools and ", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1390938824", "pillar": "P2_skills_tools", "title": "echris6/motion-video-kit ⭐707：Claude Code skill kit for premium AI-assisted busi", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1387418261", "pillar": "P2_skills_tools", "title": "Barty-Bart/motion-graphics ⭐372：Motion-graphics skills for Claude Code and Codex", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1390088311", "pillar": "P2_skills_tools", "title": "zhuyansen/awesome-claude-video-skills ⭐342：Open-source skills and toolkits that ", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1391356062", "pillar": "P2_skills_tools", "title": "howseen-ai/claude-motion-design ⭐142：A Claude Code skill to make motion design v", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1390867091", "pillar": "P2_skills_tools", "title": "Jakeschincariol/arena-skill ⭐124：When Claude keeps giving you bad answers, make ", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1387290145", "pillar": "P2_skills_tools", "title": "CaptureGrubEnchant/SolidWorks ⭐355：SolidWorks MCP Server connects an AI assistan", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1389755987", "pillar": "P2_skills_tools", "title": "admte/orc-claude-plugin ⭐127：Claude plugin for the ORC8R Cloud MCP server", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1386719155", "pillar": "P2_skills_tools", "title": "springvoiceswell/semrush-ai-tool ⭐103：Semrush SEO AI-powered analysis tool MCP s", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1396688303", "pillar": "P2_skills_tools", "title": "feder-cr/dots ⭐1983：Open-source dots for the web: an AI agent with its own brows", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1388867993", "pillar": "P2_skills_tools", "title": "kaankiziltug/logo-design-skill ⭐1225：A comprehensive logo-design skill for Claud", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1397771878", "pillar": "P2_skills_tools", "title": "nanaism/yomiyasu ⭐721：AI生成された文章の不自然さを取り除き、人間にとって自然な日本語へ書き直すためのAgent Skill", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1386778170", "pillar": "P2_skills_tools", "title": "amitshekhariitbhu/ai-system-design ⭐483：AI System Design - Learn how to design A", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1391717301", "pillar": "P2_skills_tools", "title": "openJiuwen-ai/iCode ⭐284：A lightweight, extensible, fully offline development pl", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "gh-1395987291", "pillar": "P2_skills_tools", "title": "composio-community/open-dot ⭐263：Open-source personal AI agents that work on the", "score": 21, "pipeline": "accept", "source": "github"}
+{"id": "rel-claude-code", "pillar": "P3_harness_env", "title": "anthropics/claude-code v2.1.286（2026-09-30）", "score": 16, "pipeline": "accept", "source": "release"}
+{"id": "rel-opencode", "pillar": "P3_harness_env", "title": "sst/opencode v1.18.34（2026-09-30）", "score": 18, "pipeline": "accept", "source": "release"}
+{"id": "rel-codex", "pillar": "P3_harness_env", "title": "openai/codex rust-v0.161.0-alpha.9（2026-10-01）", "score": 18, "pipeline": "accept", "source": "release"}
+{"id": "rel-gemini-cli", "pillar": "P3_harness_env", "title": "google-gemini/gemini-cli v0.64.0-nightly.20261001.gc6bccb7ec（2026-10-01）", "score": 16, "pipeline": "accept", "source": "release"}
+{"id": "ed0fkjtzo2sbnpzqlara60ghs", "pillar": "P2_skills_tools", "title": "ChatGPT 现可直接构建并部署 MCP 服务器", "score": 14, "pipeline": "reject", "veto": "V5_score", "source": "aihot"}
+{"id": "m49i2ro59f3lqy8ocoghr9f2j", "pillar": "-", "title": "Gemini 4 Argon (High) 登 Arena Agent Arena 第 8 名，净提升 +7.92%", "score": "-", "pipeline": "reject", "veto": "V4_ranking_only", "source": "aihot"}
+{"id": "br7g8nzvm1vr7rednjbgi4ox0", "pillar": "-", "title": "Hugging Face CEO 称收到数千条私信，将花几天逐一处理", "score": "-", "pipeline": "reject", "veto": "V2_gossip", "source": "aihot"}
+{"id": "o8x9d9u4106ngfkukga1vwh4h", "pillar": "P1_model_compute", "title": "蚂蚁百灵发布 Ling-3.1-flash，面向真实世界长任务升级", "score": 17, "pipeline": "reject", "veto": "V5_score", "source": "aihot"}
+{"id": "uqwg8g8u20023z36jy20gpfb1", "pillar": "P2_skills_tools", "title": "PromptArmor 披露 Copilot Cowork AI 网关被劫持绕过沙箱外传文件漏洞", "score": 14, "pipeline": "reject", "veto": "V5_score", "source": "aihot"}
+{"id": "qw3a6btvwdalftejp20ccxjb3", "pillar": "P1_model_compute", "title": "DeepSeek 开源面向华为昇腾平台的基础设施组件", "score": 17, "pipeline": "reject", "veto": "V5_score", "source": "aihot"}
+{"id": "h40ygivbwihjifohdumbgpo0j", "pillar": "P1_model_compute", "title": "Sarvam AI 发布从第一性原理构建 AI 智能体的入门指南", "score": 17, "pipeline": "reject", "veto": "V5_score", "source": "aihot"}
+{"id": "i6rwpn2rwk4atkww9xa23vr6y", "pillar": "P1_model_compute", "title": "GPT-6.1 Sol 发布 7 天后接替 GPT-6 Sol，智能指数距 GPT-6 Astra 仅 1 分", "score": 17, "pipeline": "reject", "veto": "V5_score", "source": "aihot"}
+{"id": "d7vxx7cq5bh3x0tx22ef2nxh9", "pillar": "P1_model_compute", "title": "Gary Marcus 评论 OpenAI 在 Hugging Face 事件前数月已收到安全预警", "score": 17, "pipeline": "reject", "veto": "V5_score", "source": "aihot"}
