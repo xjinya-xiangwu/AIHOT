@@ -69,6 +69,17 @@ def load_cfg():
     return json.loads((HERE / "keywords.json").read_text(encoding="utf-8"))
 
 
+PILLAR_ACTION_WORDS = {}
+PILLAR_THRESHOLDS = {}
+
+
+def apply_cfg_extras(cfg):
+    """v1.1 校准：分支柱门槛与分支柱动作词（来源 keywords.json）。"""
+    global PILLAR_ACTION_WORDS, PILLAR_THRESHOLDS
+    PILLAR_ACTION_WORDS = cfg.get("pillar_action_words", {})
+    PILLAR_THRESHOLDS = cfg.get("pillar_thresholds", {})
+
+
 def fetch_aihot(limit=40):
     url = ("https://aihot.news/api/v1/items?mode=selected&window=7d"
            f"&limit={limit}")
@@ -95,6 +106,9 @@ def bucketize(item, cfg, persona):
     for p in cfg["pillars"]:
         if p.get("persona_only") and persona != "pm":
             continue
+        negs = [n.lower() for n in p.get("negative_keywords", [])]
+        if any(n in text for n in negs):
+            continue  # 负关键词：该支柱明确不收（校准 v1.1）
         for kw in p["keywords"]:
             if kw.lower() in text:
                 hits.append(p["id"])
@@ -120,8 +134,9 @@ def score(item, pillar_id):
     s = {}
 
     action_words = ["降价", "发布", "上线", "开放", "修复", "开源", "release", "生效"]
+    action_words += PILLAR_ACTION_WORDS.get(pillar_id, [])
     s["action_clarity"] = 3 + (1 if any(w in text for w in action_words) else 0) \
-                          + (1 if pillar_id.startswith(("P1", "P3")) else 0)
+                          + (1 if pillar_id.startswith(("P1", "P3", "P4")) else 0)
 
     has_num = bool(re.search(r"[\$¥]\d|\d+(\.\d+)?%|\d+(\.\d+)?(倍|×|x)|降\d+", text))
     s["cost_impact"] = 5 if has_num else (3 if any(w in text for w in ["价格", "成本", "免费", "价"]) else 1)
@@ -158,6 +173,7 @@ def main():
     a = ap.parse_args()
 
     cfg = load_cfg()
+    apply_cfg_extras(cfg)
     if a.infile:
         items = json.loads(Path(a.infile).read_text(encoding="utf-8"))
     else:
@@ -187,10 +203,12 @@ def main():
         pillar = hits[0]
         rec = {**it, "pillar": pillar, "extra_pillars": hits[1:],
                "score": score(it, pillar), "action_hint": action_hint(it, pillar)}
-        (selected if rec["score"]["total"] >= 18 else vetoed).append(rec) \
-            if rec["score"]["total"] >= 18 else \
+        thr = PILLAR_THRESHOLDS.get(pillar, PILLAR_THRESHOLDS.get("default", 18))
+        if rec["score"]["total"] >= thr:
+            selected.append(rec)
+        else:
             vetoed.append({**rec, "veto_rule": "V5_score",
-                           "veto_reason": f"总分 {rec['score']['total']}<18"})
+                           "veto_reason": f"总分 {rec['score']['total']}<{thr}({pillar})"})
 
     by_pillar = {}
     for r in selected:
