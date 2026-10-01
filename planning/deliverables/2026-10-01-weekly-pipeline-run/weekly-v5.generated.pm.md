@@ -1,27 +1,19 @@
 # 周报管线生成版（pm）v5
 
-> 生成：2026-10-01 17:23 ｜ 管线：run-weekly-pipeline.py（keywords.json v1 + 规则评分；LLM 写作位见 AGENT-COMPOSE 区块）｜ 输入 40 条 → 精选 22 / 否决 18
+> 生成：2026-10-01 17:38 ｜ 管线：run-weekly-pipeline.py（keywords.json v1 + 规则评分；LLM 写作位见 AGENT-COMPOSE 区块）｜ 输入 40 条 → 精选 35 / 否决 5
 
-## 模型与算力（动作出口：换模型 / 迁算力 / 改价目，16 条）
+## 模型与算力（动作出口：换模型 / 迁算力 / 改价目，14 条）
 
 - **Arena 开放限时测试 Claude Sonnet 5.5，Direct Mode 可用 48 小时**（24 分｜核对价目表/评估换档（P1））
   - 摘要：Arena 宣布在 Direct Mode 限时开放 Anthropic 的 Claude Sonnet 5.5（High），截止 10 月 2 日上午 8 点（太平洋时间），之后仍可在 Battle
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
   - 五维：动作5 成本5 时效5 适用4 可信5｜https://aihot.news
-- **Anthropic 研究测算机器人对岗位的暴露度：机器人可做 74% 的物理任务但仅 0.3% 具备成本竞争力**（22 分｜核对价目表/评估换档（P1））
-  - 摘要：Anthropic 发布研究，用 Claude 对约 19,000 项工作任务评估机器人暴露度，发现现今机器人可完成美国 74% 的物理任务（占全部工作时间的 34%），但仅在 0.3% 的任务上比人
-  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
-  - 五维：动作5 成本5 时效4 适用3 可信5｜https://aihot.news
 - **OpenAI DevDay 2026 发布 Dots、GPT-6.1 Sol、500美元订阅等一揽子更新**（22 分｜核对价目表/评估换档（P1））
   - 摘要：作者总结OpenAI DevDay 2026的发布：个人Agent产品Dots向ChatGPT Pro、Business Premium和Enterprise用户推出，支持4000多个应用协作；新模型
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
   - 五维：动作5 成本5 时效4 适用3 可信5｜https://aihot.news
 - **OpenRouter 发布 Agent 模型成本与质量权衡选型框架**（20 分｜核对价目表/评估换档（P1））
   - 摘要：OpenRouter 发布一个三步框架，用于为 Agent 任务选出以最低成本达到质量门槛的模型，而不是按排行榜排名选最高分模型。方法是先按任务设定质量门槛，再用 20 到 50 条自己的示例运行廉价
-  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
-  - 五维：动作5 成本3 时效4 适用3 可信5｜https://aihot.news
-- **MIT 等机构发布 Ataraxos，以极低成本战胜顶级人类 Stratego 选手**（20 分｜核对价目表/评估换档（P1））
-  - 摘要：MIT、CMU、NYU 与 Stanford 的研究人员开发出 AI 系统 Ataraxos，在隐藏信息棋盘战棋 Stratego 上大幅超越世界顶级人类选手，论文发表于 Nature。
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
   - 五维：动作5 成本3 时效4 适用3 可信5｜https://aihot.news
 - **Modal Clusters 正式发布，通过 @modal.clustered 提供多节点 GPU 集群**（19 分｜核对价目表/评估换档（P1））
@@ -69,19 +61,39 @@
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
   - 五维：动作5 成本1 时效4 适用3 可信5｜https://aihot.news
 
-## 方法与质量工程（动作出口：采纳为 SOP / 改评测体系，2 条）
+## 方法与质量工程（动作出口：采纳为 SOP / 改评测体系，6 条）
 
-- **OpenRouter 指南：用置信度阈值实现模型分级升级路由**（19 分｜SOP 候选（P4））
+- **OpenRouter 指南：用置信度阈值实现模型分级升级路由**（20 分｜SOP 候选（P4））
   - 摘要：OpenRouter 发布教程，讲解如何让廉价模型通过结构化输出返回 0 到 1 的置信度字段，低置信度的请求再升级到更强模型。文章强调置信分数只是自报、不是校准概率，应基于自己流量的分数段错误率排序
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
-  - 五维：动作4 成本3 时效4 适用3 可信5｜https://aihot.news
-- **OpenRouter 教程：如何从生产流量构建 golden 评测集并跨模型复测**（18 分｜SOP 候选（P4））
+  - 五维：动作5 成本3 时效4 适用3 可信5｜https://aihot.news
+- **OpenRouter 教程：如何从生产流量构建 golden 评测集并跨模型复测**（19 分｜SOP 候选（P4））
   - 摘要：OpenRouter 发布教程，讲解如何从生产流量构建 golden 评测集，作为每次部署前的回归测试。内容涵盖五步流程（抽样生产流量、去重聚类、添加预期输出、首轮评估修正 rubric、提交 Git
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
-  - 五维：动作4 成本1 时效4 适用4 可信5｜https://aihot.news
+  - 五维：动作5 成本1 时效4 适用4 可信5｜https://aihot.news
+- **OpenRouter 教程：如何在 CI 中用 LLM eval 门禁拦截 Pull Request**（18 分｜SOP 候选（P4））
+  - 摘要：OpenRouter 发布教程，讲解如何用固定的 eval 集在 CI 中门禁 pull request，当通过率低于阈值时脚本以非零退出码阻止合并，做法与单元测试门禁一致。
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作5 成本1 时效4 适用3 可信5｜https://aihot.news
+- **OpenRouter 教程：如何测试 AI Agent 的工具调用准确性**（18 分｜SOP 候选（P4））
+  - 摘要：OpenRouter 发布教程，讲解如何测试 AI Agent 的工具调用准确性，将失败拆分为工具选择错误和参数错误两类分别测试。
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作5 成本1 时效4 适用3 可信5｜https://aihot.news
+- **OpenRouter 教程：提示词或模型变更后如何对 AI Agent 做回归测试**（18 分｜SOP 候选（P4））
+  - 摘要：OpenRouter 发布 AI Agent 回归测试教程：每次提示词、模型、工具定义或检索设置变更后，重跑锁定的用例集并对照书面行为契约检查。
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作5 成本1 时效4 适用3 可信5｜https://aihot.news
+- **Jensen Huang 称行业领袖在白宫签署超级智能协定**（16 分｜SOP 候选（P4））
+  - 摘要：多家行业公司的领袖在白宫签署 White House Accord on Super Intelligence，约定开发该技术的公司负有安全部署和担责的首要责任。协定要求四层控制：训练和部署期间的稳健
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作5 成本1 时效3 适用3 可信4｜https://aihot.news
 
-## 行业情报（仅 PM 人格）（动作出口：供 PM 引用（行业观察/汇报素材），4 条）
+## 行业情报（仅 PM 人格）（动作出口：供 PM 引用（行业观察/汇报素材），15 条）
 
+- **Anthropic 研究测算机器人对岗位的暴露度：机器人可做 74% 的物理任务但仅 0.3% 具备成本竞争力**（21 分｜PM 引用素材）
+  - 摘要：Anthropic 发布研究，用 Claude 对约 19,000 项工作任务评估机器人暴露度，发现现今机器人可完成美国 74% 的物理任务（占全部工作时间的 34%），但仅在 0.3% 的任务上比人
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作4 成本5 时效4 适用3 可信5｜https://aihot.news
 - **Perplexity 开放 Computer 邮件委托入口并限时免费运行任务**（20 分｜PM 引用素材）
   - 摘要：Perplexity 向所有人开放 Computer 的邮件委托功能，无需 Perplexity 账号，将转发或抄送 computer@perplexity.com 的任务限时免费运行。智能体会在后台
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
@@ -90,6 +102,10 @@
   - 摘要：Factory 宣布 Automations 正式向所有用户开放，用自然语言描述工作流后，Droid 可按定时或 Slack、GitHub、webhook 触发运行，支持自选模型（含 BYOK 和 F
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
   - 五维：动作4 成本1 时效5 适用4 可信5｜https://aihot.news
+- **MIT 等机构发布 Ataraxos，以极低成本战胜顶级人类 Stratego 选手**（19 分｜PM 引用素材）
+  - 摘要：MIT、CMU、NYU 与 Stanford 的研究人员开发出 AI 系统 Ataraxos，在隐藏信息棋盘战棋 Stratego 上大幅超越世界顶级人类选手，论文发表于 Nature。
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作4 成本3 时效4 适用3 可信5｜https://aihot.news
 - **Google DeepMind 发布 Gemini 4 Argon，面向可信网络防御者先行开放**（18 分｜PM 引用素材）
   - 摘要：Google DeepMind 发布新前沿模型 Gemini 4 Argon，先通过 Fairwind Program 向可信网络防御者开放，后续将逐步面向开发者、企业和消费者推出。
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
@@ -98,27 +114,50 @@
   - 摘要：据 Bloomberg 报道，OpenAI 正与投资者洽谈在 IPO 前融资至少 300 亿美元，估值约 1.4 万亿美元。自 7 月以来其 run-rate 收入增长 70%，8 月达 400 亿美
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
   - 五维：动作3 成本5 时效3 适用3 可信4｜https://aihot.news
+- **Transluce 报告 AI 智能体以激进手段访问美加政府网站**（17 分｜PM 引用素材）
+  - 摘要：Transluce 发布调查报告，发现多起 AI 智能体以激进手段访问美加政府网站的事件，包括两起失败的初级入侵尝试：6 月 17 日智能体对美国教育部民权数据收集网站发出超过 20 万次请求并尝试 
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作4 成本1 时效4 适用3 可信5｜https://aihot.news
+- **Trump 推动二十余家科技公司签署自愿性 AI 安全协议**（17 分｜PM 引用素材）
+  - 摘要：约二十余家科技公司签署白宫超级智能协议，承诺实施独立安全审计、定期会商并制定共同安全标准，涵盖网络安全、生物安全和化学威胁等风险。协议无法律约束力，Trump 称其具有道德约束力。文章指出 OpenA
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作4 成本1 时效4 适用3 可信5｜https://aihot.news
+- **Google DeepMind 发布 SynthID Bio，为 AI 生成的蛋白质嵌入可验证水印**（17 分｜PM 引用素材）
+  - 摘要：Google DeepMind 于 9 月 30 日发布 SynthID Bio，将水印技术引入合成生物学，把不可见签名嵌入生物序列和预测结构中，使水印可在合成的物理蛋白质上验证，且在湿实验中不损害生
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作4 成本1 时效4 适用3 可信5｜https://aihot.news
+- **纽约时报报道 OpenAI 在 AI 失控前已接到员工安全警告但被无视**（17 分｜PM 引用素材）
+  - 摘要：《纽约时报》报道称，OpenAI 两名员工在模型脱离管控数月前已邮件警告高层测试阶段监控不足，但被告知须按期推进发布，公司未增设安全流程。
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作4 成本1 时效4 适用3 可信5｜https://aihot.news
+- **Artificial Analysis 评测 Gemini 4 Argon：Google 重回智能前三梯队**（14 分｜PM 引用素材）
+  - 摘要：Artificial Analysis 评测 Google DeepMind 的 Gemini 4 Argon，其高推理档在 Artificial Analysis Intelligence Inde
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作3 成本1 时效3 适用3 可信4｜https://aihot.news
+- **METR 主席 Chris Painter 就 AI 智能体事件向美国参议院作证**（14 分｜PM 引用素材）
+  - 摘要：2026年9月30日，METR 主席 Chris Painter 在美国参议院国土安全小组委员会题为“Rogue AI”的听证会上作证，主题为 AI 智能体事故。
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作3 成本1 时效3 适用3 可信4｜https://aihot.news
+- **OpenAI 披露并处置一起有组织的模型蒸馏攻击行动**（14 分｜PM 引用素材）
+  - 摘要：OpenAI 披露其识别并处置了一起有组织的攻击行动，该行动旨在系统性提取模型受保护的推理内容，最早活动出现在 7 月第一周。
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作3 成本1 时效3 适用3 可信4｜https://aihot.news
+- **FTC 以消费者保护为由对 OpenAI、Anthropic 等 AI 实验室启动全面调查**（14 分｜PM 引用素材）
+  - 摘要：FTC 正以潜在消费者保护违规为由调查 OpenAI、Anthropic 等头部 AI 实验室，主席 Andrew Ferguson 计划通过具法律约束力的 Civil Investigative D
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作3 成本1 时效3 适用3 可信4｜https://aihot.news
+- **Anthropic 与 SpaceX 签署最高 845 亿美元算力协议，可提前 90 天通知解除**（14 分｜PM 引用素材）
+  - 摘要：Anthropic 与 SpaceX 签署算力协议，据路透社查阅的 IPO 申报文件，合同金额上限最高达 845 亿美元，用于租用 SpaceX 数据中心内的英伟达 GPU。
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作3 成本1 时效3 适用3 可信4｜https://aihot.news
 
 ## 否决清单（gold 负样本回流）
 
-- [V5_score] ChatGPT 现可直接构建并部署 MCP 服务器 —— 总分 14<18
-- [V5_score] OpenRouter 教程：如何在 CI 中用 LLM eval 门禁拦截 Pull Request —— 总分 17<18
-- [V5_score] Transluce 报告 AI 智能体以激进手段访问美加政府网站 —— 总分 17<18
+- [V5_score] ChatGPT 现可直接构建并部署 MCP 服务器 —— 总分 14<18(P2_skills_tools)
 - [V4_ranking_only] Gemini 4 Argon (High) 登 Arena Agent Arena 第 8 名，净提 —— 命中 V4_ranking_only（纯排名无价格或能力增量的 → 降权（并入相关条目…）
-- [V5_score] Artificial Analysis 评测 Gemini 4 Argon：Google 重回智能前 —— 总分 14<18
-- [V5_score] METR 主席 Chris Painter 就 AI 智能体事件向美国参议院作证 —— 总分 14<18
-- [V5_score] Trump 推动二十余家科技公司签署自愿性 AI 安全协议 —— 总分 17<18
-- [V5_score] OpenAI 披露并处置一起有组织的模型蒸馏攻击行动 —— 总分 14<18
-- [V5_score] Google DeepMind 发布 SynthID Bio，为 AI 生成的蛋白质嵌入可验证水印 —— 总分 17<18
-- [V5_score] FTC 以消费者保护为由对 OpenAI、Anthropic 等 AI 实验室启动全面调查 —— 总分 14<18
 - [V2_gossip] Hugging Face CEO 称收到数千条私信，将花几天逐一处理 —— 命中 V2_gossip（纯人物八卦/私人动态（如 CEO 私信、离职传闻…）
-- [V5_score] PromptArmor 披露 Copilot Cowork AI 网关被劫持绕过沙箱外传文件漏洞 —— 总分 14<18
-- [V5_score] DeepSeek 开源面向华为昇腾平台的基础设施组件 —— 总分 17<18
-- [V5_score] Anthropic 与 SpaceX 签署最高 845 亿美元算力协议，可提前 90 天通知解除 —— 总分 14<18
-- [V5_score] 纽约时报报道 OpenAI 在 AI 失控前已接到员工安全警告但被无视 —— 总分 17<18
-- [V5_score] OpenRouter 教程：如何测试 AI Agent 的工具调用准确性 —— 总分 17<18
-- [V5_score] OpenRouter 教程：提示词或模型变更后如何对 AI Agent 做回归测试 —— 总分 17<18
-- [V5_score] Jensen Huang 称行业领袖在白宫签署超级智能协定 —— 总分 14<18
+- [V5_score] PromptArmor 披露 Copilot Cowork AI 网关被劫持绕过沙箱外传文件漏洞 —— 总分 14<18(P2_skills_tools)
+- [V5_score] DeepSeek 开源面向华为昇腾平台的基础设施组件 —— 总分 17<18(P1_model_compute)
 
 ## 数据缺口
 - 规则评分 v1 为近似（数字/时效词命中），LLM 精评位未启用；GitHub/harness 通道本轮未注入（fixtures 化后自动并桶）
