@@ -1,17 +1,21 @@
 {
-  "run_at": "2026-10-01 17:38",
+  "run_at": "2026-10-01 18:00",
+  "runner": "v1.2",
   "persona": "pm",
-  "input": 40,
-  "selected": 35,
-  "vetoed": 5,
+  "input": 59,
+  "selected": 50,
+  "vetoed": 9,
   "by_pillar": {
-    "P1_model_compute": 14,
+    "P1_model_compute": 10,
     "P4_method_quality": 6,
-    "PM_industry_intel": 15
+    "PM_industry_intel": 15,
+    "P2_skills_tools": 15,
+    "P3_harness_env": 4
   },
-  "veto_rules_used": [
-    "V2_gossip",
-    "V4_ranking_only",
-    "V5_score"
-  ]
+  "channels": {
+    "aihot": 31,
+    "github": 15,
+    "release": 4
+  },
+  "baseline_tag": ""
 }
