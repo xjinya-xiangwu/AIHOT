@@ -12,6 +12,10 @@
 | agent-env-architecture.drawio | 五层架构图源文件（可用 app.diagrams.net 打开编辑） |
 | A0-protocol.md | Phase A0 最小闭环试验协议（盲评前后对照 + 付费意向验证） |
 | L0-content-strategy.md | L0 内容策略 v1.1（三支柱 + 产品化 IA） |
+| L0-weekly-spec.md | 周报目标与 C0-C5 采集规格 v2.2；现行单文档输出形态见 §七 |
+| agent-weekly-guideline.md | Agent 每周采集、榜单口径、A/B/C、评测/发布门、决议回写的执行指南 |
+| templates/agent-evolution-weekly.md | 统一周报模板：外部 Δ + skills/项目与模型榜单 + 同页用户选择栏 |
+| deliverables/2026-10-01-agent-evolution-weekly-merged.md | 2026-10-01 完整样例（本期外部信号和待填选择，历史快照非长期事实） |
 | domain-pack/ | AI Domain Pack 初稿 v0.1（taxonomy / sources / gold seed） |
 
 ## 边界与合规
@@ -24,4 +28,4 @@
 
 - SIAE 总控（本项目的顶层视图与子模块挂载点）：https://github.com/xjinya-xiangwu/SIAE
 - AI-cold-start（L1 技能包 + L3a 分发器，asp 安装器/周更器）：https://github.com/xjinya-xiangwu/AI-cold-start
-- Agent-sync（L3b 跨端同步底座，D14 并入；私有）：https://github.com/xjinya-xiangwu/Agent-sync
+- Agent-sync（L3b 跨端同步底座，D14 并入；目标私有，实际权限须实时核验；私人层 P 禁入）：https://github.com/xjinya-xiangwu/Agent-sync

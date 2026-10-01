@@ -27,3 +27,7 @@
 ## 输出文件名
 
 `deliverables/YYYY-MM-DD-agent-env-weekly-vN.md`（internal）或 `deliverables/YYYY-MM-DD-pm-weekly-vN.md`（pm）；同目录 `pipeline-run.log` 记录本次分桶/评分/否决统计（审计与校准用）。
+
+## SIAE 内部周报现行路由（2026-10-01）
+
+本文件的旧「双层周报/独立 boss 简报」用于历史生成稿和 PM 商品人格；**SIAE internal 人格最终交付改为 [统一模板](../../../templates/agent-evolution-weekly.md) + [执行指南](../../../agent-weekly-guideline.md)**。`selection-items.jsonl` 只是候选，不是已验证动作；组装时先读 C0 与原文、筛与任务无关项，再填外部 Δ、真实价目、skills/项目周榜（与 24h 技能快照分开）、模型能力榜 exact effort、同页 `试评/观察/不考虑` 用户栏。未取得专家标签/真实用量的质量与节省写「未知」。A/B/C 的权限和回归门仍按规格 §七执行；用户选择试评不触发安装/付费。PM 行业杂志继续独立产出，不混入本内部文件。
