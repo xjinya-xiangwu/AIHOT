@@ -1,40 +1,126 @@
 {
   "$comment": "AIHOT-style 关键词分类配置 v1.1 —— 周报=管线的传感器定义。每类映射到「帮助 agent 进化」的一个动作出口（D12/L0-weekly-spec 倒推）。匹配=标题或摘要命中任一关键词（中英任一），负关键词命中则该支柱不收。PM 层仅在 --persona pm 时启用。",
-  "$calibration": "v1.1（2026-10-01 首跑校准）：5 个缺陷样本——误桶×1（机器人岗位研究含「成本」入 P1）、误杀×4（DeepSeek 昇腾 17 分 / P4 OpenRouter 教程×2 17 分 / FTC pm 层 14 分）。修法：P1 负关键词 + P4/PM 分支柱门槛 + P4 动作词扩充。",
-  "version": "1.1.0",
+  "$calibration": "v1.2：多通道上线（github/releases）；修复 P3 连字符缺陷（claude-code/gemini-cli 带空格关键词匹配不上仓库名，三家发版被 V0 误杀）；新增 What's changed 命中；v1.2.1：主桶改通道优先级（修 opencode 发版误入 P1），P3 门槛 15（发版类成本维度天然低分）",
+  "version": "1.2.1",
   "pillars": [
     {
       "id": "P1_model_compute",
       "name": "模型与算力",
       "action": "换模型 / 迁算力 / 改价目",
       "keywords": [
-        "模型发布", "新模型", "开源模型", "权重", "降价", "价格", "定价", "免费额度", "batch", "批处理",
-        "上下文窗口", "context window", "benchmark", "评测榜", "Arena", "榜单", "智能指数",
-        "国产模型", "智谱", "GLM", "DeepSeek", "Qwen", "Kimi", "MiniMax", "Ling", "昇腾",
-        "推理成本", "成本", "token 价格", "中转", "算力平台", "GPU 集群", "vLLM", "自托管", "本地推理",
-        "model release", "pricing", "price drop", "open weights", "open source model", "cost per task", "inference"
+        "模型发布",
+        "新模型",
+        "开源模型",
+        "权重",
+        "降价",
+        "价格",
+        "定价",
+        "免费额度",
+        "batch",
+        "批处理",
+        "上下文窗口",
+        "context window",
+        "benchmark",
+        "评测榜",
+        "Arena",
+        "榜单",
+        "智能指数",
+        "国产模型",
+        "智谱",
+        "GLM",
+        "DeepSeek",
+        "Qwen",
+        "Kimi",
+        "MiniMax",
+        "Ling",
+        "昇腾",
+        "推理成本",
+        "成本",
+        "token 价格",
+        "中转",
+        "算力平台",
+        "GPU 集群",
+        "vLLM",
+        "自托管",
+        "本地推理",
+        "model release",
+        "pricing",
+        "price drop",
+        "open weights",
+        "open source model",
+        "cost per task",
+        "inference"
       ],
-      "negative_keywords": ["机器人", "岗位", "Stratego", "蛋白质", "材料科学", "就业"]
+      "negative_keywords": [
+        "机器人",
+        "岗位",
+        "Stratego",
+        "蛋白质",
+        "材料科学",
+        "就业"
+      ]
     },
     {
       "id": "P2_skills_tools",
       "name": "技能与工具生态",
       "action": "装技能 / 入包评估 / 淘汰",
       "keywords": [
-        "skill", "技能", "plugin", "插件", "MCP server", "MCP 服务器", "marketplace", "技能市场",
-        "awesome", "工具包", "toolkit", "CLI", "agent skill", "Claude Code skill", "安装", "一键安装",
-        "stars", "新星", "trending", "GitHub Trending"
+        "skill",
+        "技能",
+        "plugin",
+        "插件",
+        "MCP server",
+        "MCP 服务器",
+        "marketplace",
+        "技能市场",
+        "awesome",
+        "工具包",
+        "toolkit",
+        "CLI",
+        "agent skill",
+        "Claude Code skill",
+        "安装",
+        "一键安装",
+        "stars",
+        "新星",
+        "trending",
+        "GitHub Trending"
       ],
-      "negative_keywords": ["游戏 mod", "modding"]
+      "negative_keywords": [
+        "游戏 mod",
+        "modding"
+      ]
     },
     {
       "id": "P3_harness_env",
       "name": "harness 与运行环境",
       "action": "升级 harness / 依赖瘦身",
       "keywords": [
-        "Claude Code", "opencode", "codex", "gemini-cli", "Cursor", "Trae", "Qoder", "WorkBuddy", "Kimi Claw", "DSH",
-        "release", "发版", "changelog", "更新日志", "版本", "修复", "session", "会话恢复",
-        "harness", "agent 框架", "运行环境", "IDE"
+        "Claude Code",
+        "claude-code",
+        "opencode",
+        "codex",
+        "gemini-cli",
+        "Gemini CLI",
+        "Cursor",
+        "Trae",
+        "Qoder",
+        "WorkBuddy",
+        "Kimi Claw",
+        "DSH",
+        "release",
+        "发版",
+        "changelog",
+        "更新日志",
+        "版本",
+        "修复",
+        "session",
+        "会话恢复",
+        "harness",
+        "agent 框架",
+        "运行环境",
+        "IDE",
+        "What's changed"
       ]
     },
     {
@@ -42,9 +128,27 @@
       "name": "方法与质量工程",
       "action": "采纳为 SOP / 改评测体系",
       "keywords": [
-        "eval", "评测集", "golden set", "golden", "回归测试", "regression", "CI 门禁", "置信度", "路由",
-        "prompt 工程", "上下文工程", "context engineering", "memory", "记忆管理", "多 agent", "multi-agent",
-        "最佳实践", "教程", "tutorial", "框架发布", "agent 工程"
+        "eval",
+        "评测集",
+        "golden set",
+        "golden",
+        "回归测试",
+        "regression",
+        "CI 门禁",
+        "置信度",
+        "路由",
+        "prompt 工程",
+        "上下文工程",
+        "context engineering",
+        "memory",
+        "记忆管理",
+        "多 agent",
+        "multi-agent",
+        "最佳实践",
+        "教程",
+        "tutorial",
+        "框架发布",
+        "agent 工程"
       ]
     },
     {
@@ -53,26 +157,125 @@
       "persona_only": true,
       "action": "供 PM 引用（行业观察/汇报素材）",
       "keywords": [
-        "发布", "上线", "开放", "IPO", "融资", "估值", "营收", "ARR", "收购",
-        "监管", "调查", "听证", "协议", "合规", "安全事件", "漏洞", "数据泄露",
-        "OpenAI", "Anthropic", "Google", "Meta", "产品动态", "常驻智能体", "订阅"
+        "发布",
+        "上线",
+        "开放",
+        "IPO",
+        "融资",
+        "估值",
+        "营收",
+        "ARR",
+        "收购",
+        "监管",
+        "调查",
+        "听证",
+        "协议",
+        "合规",
+        "安全事件",
+        "漏洞",
+        "数据泄露",
+        "OpenAI",
+        "Anthropic",
+        "Google",
+        "Meta",
+        "产品动态",
+        "常驻智能体",
+        "订阅"
       ]
     }
   ],
   "veto_rules": [
-    {"id": "V1_no_action", "rule": "动作层铁律：命中任何 pillar 后仍无法落到〔换模型/装技能/升级/改方法/(PM:供引用)〕的，否决", "note": "组装阶段由 LLM 判，规则阶段先粗筛明显项"},
-    {"id": "V2_gossip", "rule": "纯人物八卦/私人动态（如 CEO 私信、离职传闻）→ 否决", "keywords": ["私信", "离职", "八卦", "回应质疑", "个人生活"]},
-    {"id": "V3_offdomain_internal", "rule": "（internal 人格）与 agent 使用无关的领域研究（生物/机器人/博弈）→ 否决", "keywords": ["蛋白质", "生物", "机器人", "Stratego", "材料科学"], "persona_exempt": ["pm"]},
-    {"id": "V4_ranking_only", "rule": "纯排名无价格或能力增量的 → 降权（并入相关条目，不单列）", "keywords": ["排名第", "登顶", "上榜"]}
+    {
+      "id": "V1_no_action",
+      "rule": "动作层铁律：命中任何 pillar 后仍无法落到〔换模型/装技能/升级/改方法/(PM:供引用)〕的，否决",
+      "note": "组装阶段由 LLM 判，规则阶段先粗筛明显项"
+    },
+    {
+      "id": "V2_gossip",
+      "rule": "纯人物八卦/私人动态（如 CEO 私信、离职传闻）→ 否决",
+      "keywords": [
+        "私信",
+        "离职",
+        "八卦",
+        "回应质疑",
+        "个人生活"
+      ]
+    },
+    {
+      "id": "V3_offdomain_internal",
+      "rule": "（internal 人格）与 agent 使用无关的领域研究（生物/机器人/博弈）→ 否决",
+      "keywords": [
+        "蛋白质",
+        "生物",
+        "机器人",
+        "Stratego",
+        "材料科学"
+      ],
+      "persona_exempt": [
+        "pm"
+      ]
+    },
+    {
+      "id": "V4_ranking_only",
+      "rule": "纯排名无价格或能力增量的 → 降权（并入相关条目，不单列）",
+      "keywords": [
+        "排名第",
+        "登顶",
+        "上榜"
+      ]
+    }
   ],
   "scoring_dims": [
-    {"id": "action_clarity", "name": "动作明确度", "desc": "能否一句话说清『改什么』"},
-    {"id": "cost_impact", "name": "成本影响面", "desc": "省钱/省上下文/省时间的量化程度"},
-    {"id": "timeliness", "name": "时效性", "desc": "本周生效 > 未来 > 常青"},
-    {"id": "breadth", "name": "适用面", "desc": "覆盖多少 agent 端/任务类型"},
-    {"id": "credibility", "name": "可信度", "desc": "T1 官方发布/定价页 > T2 媒体/榜单 > 传闻"}
+    {
+      "id": "action_clarity",
+      "name": "动作明确度",
+      "desc": "能否一句话说清『改什么』"
+    },
+    {
+      "id": "cost_impact",
+      "name": "成本影响面",
+      "desc": "省钱/省上下文/省时间的量化程度"
+    },
+    {
+      "id": "timeliness",
+      "name": "时效性",
+      "desc": "本周生效 > 未来 > 常青"
+    },
+    {
+      "id": "breadth",
+      "name": "适用面",
+      "desc": "覆盖多少 agent 端/任务类型"
+    },
+    {
+      "id": "credibility",
+      "name": "可信度",
+      "desc": "T1 官方发布/定价页 > T2 媒体/榜单 > 传闻"
+    }
   ],
-  "thresholds": {"select_score_min": 3.5, "prescreen_hit": 1, "full_mark": 5},
-  "pillar_thresholds": {"default": 18, "P4_method_quality": 15, "PM_industry_intel": 12},
-  "pillar_action_words": {"P4_method_quality": ["教程", "指南", "框架", "最佳实践", "回归测试", "评测"]}
+  "thresholds": {
+    "select_score_min": 3.5,
+    "prescreen_hit": 1,
+    "full_mark": 5
+  },
+  "pillar_thresholds": {
+    "default": 18,
+    "P4_method_quality": 15,
+    "PM_industry_intel": 12,
+    "P3_harness_env": 15
+  },
+  "channel_pillar_priority": {
+    "$comment": "通道→主桶优先级（校准 v1.2：修「数组顺序取首桶」缺陷——opencode 发版因 body 含 pricing 被误入 P1）",
+    "release": "P3_harness_env",
+    "github": "P2_skills_tools"
+  },
+  "pillar_action_words": {
+    "P4_method_quality": [
+      "教程",
+      "指南",
+      "框架",
+      "最佳实践",
+      "回归测试",
+      "评测"
+    ]
+  }
 }
