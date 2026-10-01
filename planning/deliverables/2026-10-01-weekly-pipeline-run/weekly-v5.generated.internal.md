@@ -1,6 +1,6 @@
 # 周报管线生成版（internal）v5
 
-> 生成：2026-10-01 17:23 ｜ 管线：run-weekly-pipeline.py（keywords.json v1 + 规则评分；LLM 写作位见 AGENT-COMPOSE 区块）｜ 输入 40 条 → 精选 16 / 否决 24
+> 生成：2026-10-01 17:38 ｜ 管线：run-weekly-pipeline.py（keywords.json v1 + 规则评分；LLM 写作位见 AGENT-COMPOSE 区块）｜ 输入 40 条 → 精选 20 / 否决 20
 
 ## 模型与算力（动作出口：换模型 / 迁算力 / 改价目，14 条）
 
@@ -61,21 +61,36 @@
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
   - 五维：动作5 成本1 时效4 适用3 可信5｜https://aihot.news
 
-## 方法与质量工程（动作出口：采纳为 SOP / 改评测体系，2 条）
+## 方法与质量工程（动作出口：采纳为 SOP / 改评测体系，6 条）
 
-- **OpenRouter 指南：用置信度阈值实现模型分级升级路由**（19 分｜SOP 候选（P4））
+- **OpenRouter 指南：用置信度阈值实现模型分级升级路由**（20 分｜SOP 候选（P4））
   - 摘要：OpenRouter 发布教程，讲解如何让廉价模型通过结构化输出返回 0 到 1 的置信度字段，低置信度的请求再升级到更强模型。文章强调置信分数只是自报、不是校准概率，应基于自己流量的分数段错误率排序
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
-  - 五维：动作4 成本3 时效4 适用3 可信5｜https://aihot.news
-- **OpenRouter 教程：如何从生产流量构建 golden 评测集并跨模型复测**（18 分｜SOP 候选（P4））
+  - 五维：动作5 成本3 时效4 适用3 可信5｜https://aihot.news
+- **OpenRouter 教程：如何从生产流量构建 golden 评测集并跨模型复测**（19 分｜SOP 候选（P4））
   - 摘要：OpenRouter 发布教程，讲解如何从生产流量构建 golden 评测集，作为每次部署前的回归测试。内容涵盖五步流程（抽样生产流量、去重聚类、添加预期输出、首轮评估修正 rubric、提交 Git
   - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
-  - 五维：动作4 成本1 时效4 适用4 可信5｜https://aihot.news
+  - 五维：动作5 成本1 时效4 适用4 可信5｜https://aihot.news
+- **OpenRouter 教程：如何在 CI 中用 LLM eval 门禁拦截 Pull Request**（18 分｜SOP 候选（P4））
+  - 摘要：OpenRouter 发布教程，讲解如何用固定的 eval 集在 CI 中门禁 pull request，当通过率低于阈值时脚本以非零退出码阻止合并，做法与单元测试门禁一致。
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作5 成本1 时效4 适用3 可信5｜https://aihot.news
+- **OpenRouter 教程：如何测试 AI Agent 的工具调用准确性**（18 分｜SOP 候选（P4））
+  - 摘要：OpenRouter 发布教程，讲解如何测试 AI Agent 的工具调用准确性，将失败拆分为工具选择错误和参数错误两类分别测试。
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作5 成本1 时效4 适用3 可信5｜https://aihot.news
+- **OpenRouter 教程：提示词或模型变更后如何对 AI Agent 做回归测试**（18 分｜SOP 候选（P4））
+  - 摘要：OpenRouter 发布 AI Agent 回归测试教程：每次提示词、模型、工具定义或检索设置变更后，重跑锁定的用例集并对照书面行为契约检查。
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作5 成本1 时效4 适用3 可信5｜https://aihot.news
+- **Jensen Huang 称行业领袖在白宫签署超级智能协定**（16 分｜SOP 候选（P4））
+  - 摘要：多家行业公司的领袖在白宫签署 White House Accord on Super Intelligence，约定开发该技术的公司负有安全部署和担责的首要责任。协定要求四层控制：训练和部署期间的稳健
+  - `AGENT-COMPOSE`：〔含义/动作一句话 + 分级 A/B/C + 落点组件——agent 会话填充〕
+  - 五维：动作5 成本1 时效3 适用3 可信4｜https://aihot.news
 
 ## 否决清单（gold 负样本回流）
 
-- [V5_score] ChatGPT 现可直接构建并部署 MCP 服务器 —— 总分 14<18
-- [V5_score] OpenRouter 教程：如何在 CI 中用 LLM eval 门禁拦截 Pull Request —— 总分 17<18
+- [V5_score] ChatGPT 现可直接构建并部署 MCP 服务器 —— 总分 14<18(P2_skills_tools)
 - [V0_unbucketed] Transluce 报告 AI 智能体以激进手段访问美加政府网站 —— 未命中任何关键词支柱
 - [V4_ranking_only] Gemini 4 Argon (High) 登 Arena Agent Arena 第 8 名，净提 —— 命中 V4_ranking_only（纯排名无价格或能力增量的 → 降权（并入相关条目…）
 - [V0_unbucketed] Artificial Analysis 评测 Gemini 4 Argon：Google 重回智能前 —— 未命中任何关键词支柱
@@ -90,10 +105,11 @@
 - [V3_offdomain_internal] Google DeepMind 发布 SynthID Bio，为 AI 生成的蛋白质嵌入可验证水印 —— 命中 V3_offdomain_internal（（internal 人格）与 agent 使用无…）
 - [V0_unbucketed] FTC 以消费者保护为由对 OpenAI、Anthropic 等 AI 实验室启动全面调查 —— 未命中任何关键词支柱
 - [V2_gossip] Hugging Face CEO 称收到数千条私信，将花几天逐一处理 —— 命中 V2_gossip（纯人物八卦/私人动态（如 CEO 私信、离职传闻…）
-- [V5_score] PromptArmor 披露 Copilot Cowork AI 网关被劫持绕过沙箱外传文件漏洞 —— 总分 14<18
-- [V5_score] DeepSeek 开源面向华为昇腾平台的基础设施组件 —— 总分 17<18
+- [V5_score] PromptArmor 披露 Copilot Cowork AI 网关被劫持绕过沙箱外传文件漏洞 —— 总分 14<18(P2_skills_tools)
+- [V5_score] DeepSeek 开源面向华为昇腾平台的基础设施组件 —— 总分 17<18(P1_model_compute)
 - [V0_unbucketed] Anthropic 与 SpaceX 签署最高 845 亿美元算力协议，可提前 90 天通知解除 —— 未命中任何关键词支柱
 - [V0_unbucketed] 纽约时报报道 OpenAI 在 AI 失控前已接到员工安全警告但被无视 —— 未命中任何关键词支柱
+- [V0_unbucketed] OpenAI 据报道洽谈以约 1.4 万亿美元估值融资至少 300 亿美元 —— 未命中任何关键词支柱
 
 ## 数据缺口
 - 规则评分 v1 为近似（数字/时效词命中），LLM 精评位未启用；GitHub/harness 通道本轮未注入（fixtures 化后自动并桶）
